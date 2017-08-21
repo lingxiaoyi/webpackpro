@@ -1,4 +1,4 @@
-import $ from '../../../vendor/jquery.min';
+import $ from '../../../vendor/jquery';
 import WebStorageCache from '../../../vendor/web-storage-cache.min.js';
 import Swiper from '../../../vendor/swiper.min';
 import {_indexGg_,currChannel,_newsList_} from './index_gg';

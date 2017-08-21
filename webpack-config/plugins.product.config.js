@@ -1,5 +1,17 @@
 var webpack = require('webpack');
 var pluginsConfig = require('./inherit/plugins.config.js');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+var dirVars = require('./base/dir-vars.config.js');
+var ROOT_PATH = dirVars.staticRootDir;
+
+//清理build文件夹
+pluginsConfig.unshift(new CleanWebpackPlugin(['dist', 'build'],
+    {
+      root: ROOT_PATH,       　　　　　　　　　　//根目录
+      verbose:  true,        　　　　　　　　　　//开启在控制台输出信息
+      dry:      false        　　　　　　　　　　//启用删除文件
+    })
+);
 
 /* webpack1下，用了压缩插件会导致所有loader添加min配置，而autoprefixser也被定格到某个browers配置 */
 pluginsConfig.push(new webpack.optimize.UglifyJsPlugin({

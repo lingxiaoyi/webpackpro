@@ -11,7 +11,6 @@ moduleConfig.rules.push({
       loader: 'css-loader',
       options: {
         minimize: true,
-        '-autoprefixer': true,
       },
     },
     {
@@ -41,7 +40,7 @@ moduleConfig.rules.push({
 });
 
 moduleConfig.rules.push({
-  test: /\.less$/,
+  test: /\.scss$/,
   include: dirVars.srcRootDir,
   use: ExtractTextPlugin.extract({
     fallback: 'style-loader',
@@ -50,7 +49,6 @@ moduleConfig.rules.push({
         loader: "css-loader",
         options: {
           minimize: true,
-          '-autoprefixer': true,
         },
       },
       {
