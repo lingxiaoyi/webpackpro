@@ -2,9 +2,10 @@
 import $ from '../../../vendor/jquery.min';
 import WebStorageCache from '../../../vendor/web-storage-cache.min.js';
 import Swiper from '../../../vendor/swiper.min';
-import  '../../public-resource/sass/database.scss';
-import  '../../public-resource/sass/common.scss';
+/*import  '../../public-resource/sass/database.scss';
+import  '../../public-resource/sass/common.scss';*/
 import  '../../public-resource/sass/newindex.scss';
+import '../../dll/dll.css';
 import  './data_all.scss';
 
 var host = 'http://dfsports_h5.dftoutiao.com/dfsports_h5/' // 线上
