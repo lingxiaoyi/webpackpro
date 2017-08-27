@@ -9,6 +9,7 @@ GLOBAL.namespace = function(str){
 GLOBAL.namespace('baidugg');
 GLOBAL.namespace('channel');
 GLOBAL.namespace('nohannel');
+GLOBAL.namespace('dfgdhdfhdfh');
 //渠道 首页
 GLOBAL.baidugg={
   indexGg:{//首页
