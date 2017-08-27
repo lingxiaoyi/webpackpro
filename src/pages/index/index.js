@@ -15,7 +15,7 @@ var hostDsp = "http://dftyttd.dftoutiao.com/partner/list";//线上
 var homeLuoboApi = 'http://msports.eastday.com/json/msponts/home_lunbo.json';
 var orderApi = 'http://dfty.dftoutiao.com/index.php/Home/WechatOrder/yuyue?system_id=9&machid='
 
-var a=3
+var a=4
 // module 初始化并将公共方法放这里管理,方便取用
 
 var module = (function (my) {
