@@ -1,9 +1,9 @@
-var webpack = require('webpack');
-var pluginsConfig = require('./inherit/plugins.config.js');
+let webpack = require('webpack')
+let pluginsConfig = require('./inherit/plugins.config.js')
 
 pluginsConfig.push(new webpack.DefinePlugin({
-  IS_PRODUCTION: false,
-}));
+    IS_PRODUCTION: false
+}))
 
 /*pluginsConfig.push(new webpack.LoaderOptionsPlugin({
   options: {
@@ -13,6 +13,6 @@ pluginsConfig.push(new webpack.DefinePlugin({
   },
 }));*/
 
-pluginsConfig.push( new webpack.HotModuleReplacementPlugin());
+pluginsConfig.push(new webpack.HotModuleReplacementPlugin())
 
-module.exports = pluginsConfig;
+module.exports = pluginsConfig

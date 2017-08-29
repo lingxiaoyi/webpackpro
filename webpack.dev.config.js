@@ -10,9 +10,9 @@ module.exports = {
 
   plugins: require('./webpack-config/plugins.dev.config.js'),
 
-  //externals: require('./webpack-config/externals.config.js'),
+  externals: require('./webpack-config/externals.config.js'),
 
   devtool: 'inline-source-map',
 
   devServer: require('./webpack-config/vendor/devServer.config.js'),
-};
+}

@@ -71,17 +71,6 @@ module.exports = {
             options: {
                 name: 'static/fonts/[name].[hash].[ext]'
             }
-        }
-        /*{
-          // 专供iconfont方案使用的，后面会带一串时间戳，需要特别匹配到
-          test: /(dll.js)$/,
-          include: dirVars.srcRootDir,
-          // exclude: /glyphicons/,
-          // loader: 'file-loader?name=static/fonts/[name].[ext]',[name].[hash]
-          loader: 'file-loader',
-          options: {
-            name: 'static/[name].[ext]',
-          },
-        },*/
+        },
     ]
 }

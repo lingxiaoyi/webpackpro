@@ -11,4 +11,4 @@ module.exports = {
   plugins: require('./webpack-config/plugins.product.config.js'),
 
   externals: require('./webpack-config/externals.config.js'),
-};
+}

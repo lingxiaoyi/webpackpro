@@ -6,4 +6,4 @@ module.exports = {
   hot: true, // 热启动
   compress: true,
   watchContentBase: false,
-};
+}

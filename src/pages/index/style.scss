@@ -15,7 +15,7 @@ header {
         }
     }
     p{
-        float: right;color:#333;font-size: 0.26rem;line-height: 0.9rem;background-image: url("./logo.png");background-size:2rem 0.5rem;
+        float: right;color:#333;font-size: 0.26rem;line-height: 0.9rem;background-image: url("./logo.png");background-size:2rem 0.5rem;transform: translate(-50%,-50%);
         span{
             color:#ff3333;
         }
@@ -367,7 +367,7 @@ li#noMore{
         h3{margin-top: 0.1rem}
         ul{
             display: -webkit-box;
-            display: box;position: relative;
+            display: flex;position: relative;
             overflow: hidden;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
