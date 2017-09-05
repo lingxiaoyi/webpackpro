@@ -2,17 +2,10 @@ let webpack = require('webpack')
 let pluginsConfig = require('./inherit/plugins.config.js')
 
 pluginsConfig.push(new webpack.DefinePlugin({
-    IS_PRODUCTION: false
+    IS_PRODUCTION: false,
+    'process.env.NODE_ENV': JSON.stringify('production')
 }))
 
-/*pluginsConfig.push(new webpack.LoaderOptionsPlugin({
-  options: {
-    //postcss: require('./vendor/postcss.config.js'),
-    //eslint: require('./vendor/eslint.config.js'),
-
-  },
-}));*/
-
-pluginsConfig.push(new webpack.HotModuleReplacementPlugin())
+//pluginsConfig.push(new webpack.HotModuleReplacementPlugin()) //先关闭 不然改变样式一直刷新页面
 
 module.exports = pluginsConfig

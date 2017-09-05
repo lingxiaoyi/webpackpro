@@ -1,6 +1,6 @@
-var dirVars = require('../base/dir-vars.config.js')
-var eslintFormatter = require('eslint-friendly-formatter')
-var path = require('path')
+let dirVars = require('../base/dir-vars.config.js')
+let eslintFormatter = require('eslint-friendly-formatter')
+let path = require('path')
 
 module.exports = {
     rules: [
@@ -20,9 +20,13 @@ module.exports = {
           }
         },*/
         /*{
-          test: require.resolve('jquery'),  // 此loader配置项的目标是NPM中的jquery
-          loader: 'expose?$!expose?jQuery', // 先把jQuery对象声明成为全局变量`jQuery`，再通过管道进一步又声明成为全局变量`$`
+            test: require.resolve('zepto'),
+            loader: 'exports-loader?window.Zepto!script-loader!exports-loader?window.$!script-loader'
         },*/
+        {
+            test: require.resolve('n-zepto'),
+            loader: 'expose-loader?$!expose-loader?Zepto', // 先把jQuery对象声明成为全局变量`jQuery`，再通过管道进一步又声明成为全局变量`$`    这样就可以用$的全局插件了  直接script引用
+        },
         {
             test: /\.js$/,
             include: dirVars.srcRootDir,

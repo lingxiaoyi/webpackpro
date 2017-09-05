@@ -1,4 +1,4 @@
-let webpack = require('webpack')
+const webpack = require('webpack')
 let pluginsConfig = require('./inherit/plugins.config.js')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 let dirlets = require('./base/dir-vars.config.js')
@@ -21,17 +21,11 @@ pluginsConfig.push(new webpack.optimize.UglifyJsPlugin({
 }))
 
 pluginsConfig.push(new webpack.DefinePlugin({
-    IS_PRODUCTION: true
+    IS_PRODUCTION: true,
+    'process.env.NODE_ENV': JSON.stringify('production')
 }))
 
 pluginsConfig.push(new webpack.NoEmitOnErrorsPlugin()) // 配合CLI的--bail，一出error就终止webpack的编译进程
-
-/*pluginsConfig.push(new webpack.LoaderOptionsPlugin({
-  options: {
-    //postcss: require('./vendor/postcss.config.js'),
-    //eslint: require('./vendor/eslint.config.js'),
-  },
-}));*/
 
 /* HashedModuleIdsPlugin 这个插件，他是根据模块的相对路径生成一个长度只有四位的字符串作为模块的 module id ，
 这样就算引入了新的模块，也不会影响 module id 的值，只要模块的路径不改变的话。 */

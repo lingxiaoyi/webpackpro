@@ -4,17 +4,29 @@ const layout = require('./html.ejs') // 整个页面布局的模板文件，主�
 const header = require('../../components/header/html.ejs') // 页头的模板
 const footer = require('../../components/footer/html.ejs') // 页脚的模板
 const logo = require('../../components/top-logo/html.ejs') // logo的模板
-
+let statisticsHtml = require('../../components/public/bd-statistics.html') // logo的模板
 /* 整理渲染公共部分所用到的模板变量 */
+/* global IS_PRODUCTION:true */
+if (!IS_PRODUCTION) {
+    statisticsHtml = ''
+}
 const pf = {
     pageTitle: '',
+    crumbsHtml: '',
+    scriptHtml: '',
+    statisticsHtml: statisticsHtml,
     constructInsideUrl: noJquery.constructInsideUrl
 }
 
 const moduleExports = {
     /* 处理各个页面传入而又需要在公共区域用到的参数 */
-    init({pageTitle}) {
-        pf.pageTitle = pageTitle // 比如说页面名称，会在<title>或面包屑里用到
+    init({pageTitle = '', crumbsHtml = '', pageKeywords = '', pageDescription = '', scriptHtml = '', hasLogo = true}) {
+        pf.pageTitle = pageTitle
+        pf.pageKeywords = pageKeywords
+        pf.pageDescription = pageDescription
+        pf.crumbsHtml = crumbsHtml //头部小面包屑
+        pf.scriptHtml = scriptHtml //script里的固定变量
+        pf.hasLogo = hasLogo //判断有没有logo栏 默认定义false 有logo栏
         return this
     },
 
@@ -24,7 +36,7 @@ const moduleExports = {
         const renderData = {
             header: header(componentRenderData),
             footer: footer(componentRenderData),
-            logo: logo(componentRenderData),
+            logo: componentRenderData.hasLogo ? logo(componentRenderData) : '',
             content
         }
         return layout(renderData)

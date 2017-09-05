@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="hotcss" content="initial-dpr=1">
-  <meta name="x5-page-mode" content="no-title">
-  <meta name="format-detection" content="telephone=no">
-  <title>东方体育手机版_NBA直播|CBA直播|足球直播|英超直播吧|CCTV5在线直播</title>
-  <meta  name="keywords"  content="NBA直播,足球直播,体育直播平台,东方体育手机版,英超直播吧,CCTV5在线直播,CBA直播"  />
-  <meta  name="description"  content="东方体育是东方网旗下的体育直播及体育资讯平台，东方体育手机版也可在线直播NBA/CBA体育赛事直播,英超/中超等足球直播,还可在线观看更多精彩体育赛事视频集锦和海量最新的体育新闻资讯,关注东方体育手机版，每一秒都有你的世界！" />
-  <script src="<%= DIRS.BUILD_FILE.js.hotcss %>"></script>
+    <meta charset="UTF-8">
+    <meta name="hotcss" content="initial-dpr=1">
+    <meta name="x5-page-mode" content="no-title">
+    <meta name="format-detection" content="telephone=no">
+    <title><%= pageTitle %></title>
+    <meta name="keywords" content="<%= pageKeywords %>"/>
+    <meta name="description" content="<%= pageDescription %>"/>
+    <script src="<%= DIRS.BUILD_FILE.js.hotcss %>"></script>
+    <link rel="stylesheet" href="<%= DIRS.BUILD_FILE.dll.css %>">
+    <%= scriptHtml %>
+    <%= statisticsHtml %>
 </head>
 <body id="indexNew">

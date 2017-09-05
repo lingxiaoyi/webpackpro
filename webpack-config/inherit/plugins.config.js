@@ -9,27 +9,27 @@ let HashOutput = require('webpack-plugin-hash-output')
 let configPlugins = [
     /* 全局shimming */
     new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-        'window.$': 'jquery',
+        $: 'n-zepto',
+        Zepto: 'n-zepto',
+        'window.Zepto': 'n-zepto',
+        'window.$': 'n-zepto',
+        WebStorageCache: 'web-storage-cache',
         Vue: 'vue',
         vue: 'vue'
     }),
     /* 抽取出所有通用的部分 */
     new webpack.optimize.CommonsChunkPlugin({
-        names: ['commons/commons'], // chunk的名字,需要注意的是，chunk的name不能相同！！！
-        filename: '[name].[chunkhash].js', //生成common.js [name]/
-        minChunks: 2
+        names: ['static/commons'], // chunk的名字,需要注意的是，chunk的name不能相同！！！
+        filename: '[name]/commons.[chunkhash].js', //生成common.js [name]/
+        minChunks: 4
     }),
     /* 抽取出webpack的runtime代码()，避免稍微修改一下入口文件就会改动commonChunk，导致原本有效的浏览器缓存失效 */
     new webpack.optimize.CommonsChunkPlugin({
         name: 'webpack-runtime',
-        filename: 'commons/webpack-runtime.[hash].js'
+        filename: 'static/commons/webpack-runtime.[hash].js'
     }),
     /* 抽取出chunk的css */
     new ExtractTextPlugin('[name]/styles.[contenthash].css'),
-    //new ExtractTextPlugin('./static/dll.css'),
     /* 配置好Dll */
     new webpack.DllReferencePlugin({
         context: dirlets.staticRootDir, // 指定一个路径作为上下文环境，需要与DllPlugin的context参数保持一致，建议统一设置为项目根目录
@@ -45,7 +45,7 @@ pageArr.forEach((page) => {
     const htmlPlugin = new HtmlWebpackPlugin({
         filename: `${page}.html`,
         template: path.resolve(dirlets.pagesDir, `./${page}/html`),
-        chunks: ['webpack-runtime', page, 'commons/commons'],
+        chunks: ['webpack-runtime', page, 'static/commons'],
         hash: true, // 为静态资源生成hash值
         xhtml: true
     })

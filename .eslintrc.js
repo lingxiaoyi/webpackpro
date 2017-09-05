@@ -21,7 +21,7 @@ module.exports = {
     // add your custom rules here
     rules: {
         // allow debugger during development
-        'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+        'no-debugger':/* process.env.NODE_ENV === 'production' ? 2 :*/ 0,
         'camelcase': 0,
         "dot-location": [2, "property"], // 强制使用.号取属性     .换行不报错
         'no-extra-boolean-cast': 0,
@@ -43,15 +43,15 @@ module.exports = {
         'prefer-arrow-callback': 0,
         'prefer-rest-params': 0,
         'no-param-reassign': 0,
-        'max-len': [
+       /* 'max-len': [
             'error', {
-                'code': 200,
+                'code': 2000,
                 'tabWidth': 4,
                 'comments': 200,
                 'ignoreComments': false,
                 'ignoreTrailingComments': false,
                 'ignoreUrls': true,
-            }],
+            }],*/
         'global-require': 0,
         'no-restricted-syntax': [
             2,

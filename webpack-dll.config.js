@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const dirVars = require('./webpack-config/base/dir-vars.config.js') // 与业务代码共用同一份路径的配置表
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const ROOT_PATH = dirVars.srcRootDir
+let ROOT_PATH = dirVars.srcRootDir
 module.exports = {
     output: {
         path: dirVars.dllDir,
@@ -15,7 +15,17 @@ module.exports = {
           或是css/less/图片/字体文件等资源，但注意要在module参数配置好相应的loader
         */
         dll: [
-            './vendor/jquery.min',
+            'n-zepto',
+           /* 'zepto/src/deferred',
+            'zepto/src/callbacks',
+            'zepto/src/selector',
+            'zepto/src/detect',
+            'zepto/src/fx',
+            'zepto/src/fx_methods',
+            'zepto/src/touch',
+            'zepto/src/gesture',*/
+            'fastclick',
+            'web-storage-cache',
             './src/public-resource/sass/database.scss',
             './src/public-resource/sass/common.scss'
         ]
@@ -34,10 +44,10 @@ module.exports = {
         }),
         /* 跟业务代码一样，该兼容的还是得兼容 */
         new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery',
-            'window.$': 'jquery'
+            $: 'n-zepto',
+            Zepto: 'n-zepto',
+            'window.Zepto': 'n-zepto',
+            'window.$': 'n-zepto'
         }),
         new ExtractTextPlugin('[name].css'), // 打包css/less的时候会用到ExtractTextPlugin
         new webpack.optimize.UglifyJsPlugin({
@@ -45,11 +55,6 @@ module.exports = {
                 warnings: false
             }
         })
-        /*new webpack.LoaderOptionsPlugin({
-          options: {
-            postcss: require('./webpack-config/vendor/postcss.config.js'),
-          },
-        }),*/
     ],
     module: require('./webpack-config/module.product.config.js'), // 沿用业务代码的module配置
     resolve: require('./webpack-config/resolve.config.js') // 沿用业务代码的resolve配置

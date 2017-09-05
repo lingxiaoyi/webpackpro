@@ -1,6 +1,6 @@
-var dirVars = require('./base/dir-vars.config.js')
-const moduleConfig = require('./inherit/module.config.js')
-let path = require('path')
+const dirVars = require('./base/dir-vars.config.js')
+let moduleConfig = require('./inherit/module.config.js')
+
 /*
   由于ExtractTextPlugin不支持热更新，因此选择在开发环境下直接用style-loader加载样式。
   如有问题，可切换回ExtractTextPlugin，即使不能用热更新，也可实现LiveReload
@@ -41,20 +41,21 @@ moduleConfig.rules.push({
 
 moduleConfig.rules.push({
     test: /\.scss$/,
+    include: dirVars.srcRootDir,
     use: [
         {
             loader: 'style-loader'
         },
         {
             loader: 'css-loader', // 将 CSS 转化成 CommonJS 模块
-            options: {
+            /*options: {
                 sourceMap: true
-            }
+            }*/
         },
         {
             loader: 'postcss-loader',
             options: {
-                sourceMap: true,
+                /*sourceMap: true,*/
                 plugins: (loader) => [
                     require('precss'),
                     require('autoprefixer')({
@@ -66,15 +67,15 @@ moduleConfig.rules.push({
             }
         }, {
             loader: 'sass-loader',
-            options: {
+            /*options: {
                 sourceMap: true
-            } // 将 Sass 编译成 CSS
+            } */// 将 Sass 编译成 CSS
         }
     ]
 })
 
 /*moduleConfig.rules.push({
-    test: path.resolve(dirVars.vendorDir, './jquery.min'), // 此loader配置项的目标是NPM中的jquery
+    test: require.resolve(dirVars.vendorDir, 'jquery.min'), // 此loader配置项的目标是NPM中的jquery
     loader: 'expose?$!expose?jQuery',
 })*/
 module.exports = moduleConfig
