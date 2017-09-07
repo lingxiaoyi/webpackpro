@@ -1,1 +1,1 @@
-import '../../public-resource/logic/schedule.page.js'
+import '../../public-resource/logic/query.tag.page.js'

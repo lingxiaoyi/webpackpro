@@ -1,4 +1,19 @@
 <script>
+    <% if (IS_PRODUCTION) { %>
+    var _matchId_="$!{page.matchid}";
+    var  _page_type="zhibo";
+    var _yiji_="$!{yiji}";
+    var _erji_="$!{erji}";
+    var _sanji_="$!{sanji}";
+    var _newstype_="$!{newstype}";
+    var _isdftt_="$!{isdftt}";
+    <% }else { %>
     var _matchId_="1499014800000227816";
     var _page_type='zhibo'
+    var _yiji_="$!{yiji}";
+    var _erji_="$!{erji}";
+    var _sanji_="$!{sanji}";
+    var _newstype_="$!{newstype}";
+    var _isdftt_="$!{isdftt}";
+    <% } %>
 </script>

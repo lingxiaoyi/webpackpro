@@ -339,7 +339,6 @@ $(() => {
                     let title = item.title.split(' ')
                     let mHtml = ''
                     if (item.ismatched === -1) {
-                        //预约先不做  todo
                         if (_util_.isWeiXin()) {
                             mHtml = `<div class="btn-order" data-matchid="${item.matchid}"><a href="javascript:;">预约</a></div>`
                         } else {
@@ -356,12 +355,12 @@ $(() => {
                                 <h6>${title[1] + ' ' + title[0]}</h6>
                                 <div class="clearfix">
                                     <div class="item">
-                                        <img src="${item.home_logoname}" alt=""/>
+                                        <img src="${item.home_logoname ? item.home_logoname : config.DIRS.BUILD_FILE.images['logo_default']}" alt=""/>
                                         <p>${item.home_team}</p>
                                     </div>
                                     <div class="m">${mHtml}</div>
                                     <div class="item">
-                                        <img src="${item.visit_logoname}" alt=""/>
+                                        <img src="${item.visit_logoname ? item.visit_logoname : config.DIRS.BUILD_FILE.images['logo_default']}" alt=""/>
                                         <p>${item.visit_team}</p>
                                     </div>
                                 </div>
@@ -374,7 +373,6 @@ $(() => {
         //加载统计
         loadStatistics() {
             let {keys} = Object//扩展object的方法
-
             $content.html(`<div class="tab-h" id="dataSlideNav"></div><div class="tab-b tab-all"></div>`)
             let $dataSlideNav = $('#dataSlideNav')
             let $tabB = $content.find('.tab-b')
@@ -524,7 +522,7 @@ $(() => {
             }
             initNav(this.classType)
             $dataSlideNav.height(this.slideHeight)
-            $dataSlideNav.on('click', '.item', function() {
+            $dataSlideNav.on('click', '.item', function(e) {
                 let dataType = $(this).attr('data-type')
                 let data = {
                     datatype: dataType,
@@ -549,7 +547,7 @@ $(() => {
                     $J_loading.hide()
                 })
             })
-            $dataSlideNav.find('.item').eq(0).click() //默认执行第一个
+            $dataSlideNav.find('.item').eq(0).click().click() //默认执行第一个 2个click为了兼容浏览器
             function initNav(dataType) {
                 let dataobj = tableList[dataType]
                 for (let item of keys(dataobj)) {
@@ -559,7 +557,6 @@ $(() => {
                     $dataSlideNav.append(`<div class="item" data-type="${item}">${dataobj[item]}</div>`)
                 }
             }
-
             function produceHtml(result) {
                 let html = `<table class="tongji"><tr style="background: #f8f8f8">`
                 let data = result.data.data

@@ -382,10 +382,10 @@ $(() => {
 
             let data = {
                 channel: this.channel,
-                _os_: _os_,
-                _recgid_: _recgid_,
-                _qid_: _qid_,
-                _domain_: _domain_
+                os: _os_,
+                recgid: _recgid_,
+                qid: _qid_,
+                domain: _domain_
             }
             let that = this
             that.indexmatchRequest = _util_.makeJsonp(HOST + 'indexmatch', data).done(function(result) {
@@ -619,7 +619,6 @@ $(() => {
                 if (!$(this).children('.loading-tips2').length) return
                 let tipsTop = $(this).children('.loading-tips2').position().top //这个是距离父元素定位的距离  会变的越来越小
                 let slideHeight = that.slideHeight
-
                 if (!$header.is(':visible')) {
                     slideHeight = slideHeight + that.headerHeight
                 }
@@ -791,7 +790,7 @@ $(() => {
                                     </a>
                                 </div>
                                 <div>
-                                    <a href="http://msports.eastday.com/downloadapp.html">
+                                    <a href="download-app.html">
                                         <img src="${config.DIRS.BUILD_FILE.images['i-zhibo']}" alt=""/>
                                         <p>看直播</p>
                                     </a>
@@ -1068,7 +1067,6 @@ $(() => {
                 pixel: _pixel_,
                 fr_url: _util_.getReferrer() || 'null', //首页是来源url(document.referer)
                 site: 'sport'
-
             }
             return _util_.makeGet(HOST_DSP_LIST, data)
         }

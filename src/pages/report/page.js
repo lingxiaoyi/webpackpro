@@ -1,1 +1,1 @@
-import '../../public-resource/logic/live.page.js'
+import '../../public-resource/logic/report.page.js'

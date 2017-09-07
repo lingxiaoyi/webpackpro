@@ -1,12 +1,13 @@
 const content = require('./content.ejs')
 const layout = require('layout')
 const config = require('configModule')
-const pageTitle = '东方体育手机版app下载'
-const pageKeywords = '东方体育手机版app,体育赛事，体育赛程，赛程预告，赛程表'
-const pageDescription = '东方体育手机版app,东方体育赛程频道提供最新的篮球赛程表，足球赛程表，帮助球迷及时了解最新的体育赛事，不错过每一次精彩的体育赛事。'
-
+const pageTitle = 'NBA|东方体育手机版_东方体育'
+const pageKeywords = '东方体育,NBA直播,足球直播,体育直播平台,东方体育,英超直播,CCTV5在线直播,CBA直播,NBA视频直播,在线观看,体育精彩集锦'
+const pageDescription = '东方体育手机版提供NBA/CBA体育赛事直播,英超/中超等足球直播,还有更多精彩体育赛事视频集锦在线观看,了解最新足球/篮球等体育赛程，敬请关注东方体育！'
+const hasLogo = false
 module.exports = layout.init({
     pageTitle,
     pageKeywords,
-    pageDescription
+    pageDescription,
+    hasLogo
 }).run(content(config))

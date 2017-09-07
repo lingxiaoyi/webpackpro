@@ -1,31 +1,20 @@
-<nav id="insideNav" class="data-rank" >
-    <ul class="clearfix">
-        <li><a class="active"  href="" data-type="" data-saishiid="">重要</a></li>
-        <li><a href="" data-type="nba" data-saishiid="900002">NBA</a></li>
-        <li><a href="" data-type="yingchao" data-saishiid="900006">英超</a></li>
-        <li><a href="" data-type="zhongchao" data-saishiid="900005">中超</a></li>
-        <li><a href="" data-type="xijia" data-saishiid="900007">西甲</a></li>
-        <li><a href="" data-type="ouguan" data-saishiid="900011">欧冠</a></li>
-        <li><a href="" data-type="yaguan" data-saishiid="900013">亚冠</a></li>
-        <li><a href="" data-type="cba" data-saishiid="900003">CBA</a></li>
-        <li><a href="" data-type="yijia" data-saishiid="900008">意甲</a></li>
-        <li><a href="" data-type="dejia" data-saishiid="900009">德甲</a></li>
-        <li><a href="" data-type="fajia" data-saishiid="900017">法甲</a></li>
-    </ul>
-</nav>
 <div class="crumbs">
-    <div class="time all-time">
-        <div class="cont">
-            <span class="left"></span>
-            <span class="middle" id="dateText"></span>
-            <span class="right"></span>
-        </div>
-    </div>
+    <a class="active" href="<%= API_ROOT %>">首页</a>
+    <i></i>
+    <a href="javascript:;">资讯</a>
 </div>
-<div class="data-main data-all">
-    <div class="content">
-        <!--<ul class="match-info">
-            <li class="tit">2017-08-03 周四</li>
-        </ul>-->
+<div class="head" id="head">
+    <div class="tag"><span></span>相关资讯</div>
+</div>
+<section class="sec-news-list" id="secNewsList">
+    <ul class="clearfix"></ul>
+</section>
+<div class="separate-line"></div>
+<div id="J_loading" class="loading">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
     </div>
+    <p class="txt">数据加载中</p>
 </div>

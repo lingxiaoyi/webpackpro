@@ -1,8 +1,45 @@
 <div class="crumbs">
-    <a class="active" href="/">首页</a>
+    <a class="active" href="<%= API_ROOT %>">首页</a>
     <i></i>
-    <a href="javascript:;">直播</a>
+    <a href="javascript:;">$!{categoryFirst}</a>
 </div>
+<% if (IS_PRODUCTION) { %>
+<article id="J_article" class="J-article article">
+    <div id="title">
+        <div class="article-title">
+            <h1 class="title">$!{page.title}</h1>
+        </div>
+        <div class="article-src-time">
+            <span class="src">$!{page.pageSource}&nbsp;&nbsp;&nbsp;&nbsp;$!{time}</span>
+        </div>
+    </div>
+    <div id="content" class="J-article-content article-content">
+
+        #set($idx=0)
+        #foreach($zw in $!{zws})
+        #if($zw == "" || $zw == "null")
+        #elseif($zw.contains("$#imgidx"))
+        #set($img = $!{page.imgs.get($idx).src})
+        #set($gifimg = $!gifimglist[$idx])
+        #set($paddingValue=$!{page.imgs.get($idx).imgheight}*1.0/$!{page.imgs.get($idx).imgwidth}*100)
+        <figure class="section img">
+            <a class="img-wrap" style="padding-bottom: $paddingValue%;" href="$!{page.convers($img)}" data-size="$!{page.imgs.get($idx).imgwidth} x $!{page.imgs.get($idx).imgheight}">
+                <img width="100%" alt="$!{page.title}" src="$!{page.convers($img)}" data-weight="588" data-width="$!{page.imgs.get($idx).imgwidth}" data-height="$!{page.imgs.get($idx).imgheight}" gif-minisrc="$!{gifimg}">
+            </a>
+        </figure>
+        #set($idx=$idx+1)
+        #else
+        <p class="section txt">$zw</p>
+        #end
+        #end
+    </div>
+    <p class="article-tag clearfix">
+        #foreach($param in ${tagMap.entrySet()})
+        <a href="http://m.wa5.com/index_items_news.html?typecode=${param.key}&name=${param.value}">${param.value} </a>
+        #end
+    </p>
+</article>
+<% }else { %>
 <article id="J_article" class="J-article article">
     <div id="title">
         <div class="article-title">
@@ -43,10 +80,12 @@
     </div>
     <!-- <div class="copyright">来源：东方体育   欢迎分享，转载请注明出处。</div>-->
     <p class="article-tag clearfix">
-        <a href="http://172.18.6.213:3000/src/index_items_news.html?typecode=900049&name=足球">勇士</a>
-        <a href="http://172.18.6.213:3000/src/index_items_news.html?typecode=900477&name=中国足球">凯尔特人</a>
+        <a href="query-tag.html?typecode=900049&name=足球">勇士</a>
+        <a href="query-tag.html?typecode=900477&name=中国足球">凯尔特人</a>
     </p>
 </article>
+<% } %>
+
 <!-- news_check 适配安卓 -->
 <div id="news_check">
     <!-- 猜你感兴趣 -->

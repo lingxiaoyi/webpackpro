@@ -1,5 +1,5 @@
 <div class="crumbs">
-    <a class="active" href="/">首页</a>
+    <a class="active" href="<%= API_ROOT %>">首页</a>
     <i></i>
     <a href="javascript:;">直播</a>
 </div>
@@ -7,12 +7,7 @@
     <div class="top">
         <div class="left">
             <p class="sub2"><img src="<%= DIRS.BUILD_FILE.images['logo_default'] %>"></p>
-            <p class="sub1">奥特曼</p>
-            <!--<p class="sub3">
-                <span class="num fr cff0000">
-                    <span id="zhibohead-num1">6564</span>人</span>
-                <span class="zan1 fr mr10"></span>
-            </p>-->
+            <p class="sub1">-</p>
         </div>
         <div class="mid" id="headScore">
             <div class="title"></div>
@@ -25,27 +20,15 @@
         </div>
         <div class="right">
             <p class="sub2"><img src="<%= DIRS.BUILD_FILE.images['logo_default'] %>"></p>
-            <p class="sub1">小怪兽</p>
-            <!-- <p class="sub3">
-                 <span class="num fl mr10 c0096ff">
-                     <span id="zhibohead-num2">15878</span>人
-                 </span>
-                 <span class="zan2 fl"></span>
-             </p>-->
+            <p class="sub1">-</p>
         </div>
-        <a href="downloadapp.html" class="down clearfix">
+        <a href="download-app.html" class="down clearfix">
             <img src="<%= DIRS.BUILD_FILE.images['i-logo'] %>" alt=""/>
             <p>下载东方体育,即刻享受高清视频直播!</p>
             <span class="btn">下载</span>
         </a>
     </div>
-    <!--<div class="bottom">
-        <div class="left" id="zhibohead-left"></div>
-        <div class="right" id="zhibohead-right"></div>
-    </div>-->
-    <div class="menu" id="zhiboMenu">
-
-    </div>
+    <div class="menu" id="zhiboMenu"></div>
 </div>
 <div class="zhibo_body">
     <div class="zhibo-txt-main zhibo-data-content">
@@ -72,8 +55,7 @@
             </li>-->
         </ul>
     </div>
-    <div class="zhibo-data-content sec-news-list"  style="display: none" id="matchNews">
-    </div>
+    <div class="zhibo-data-content sec-news-list"  style="display: none" id="matchNews"></div>
     <div class="zhibo-data-content" id="zhiboDataContent"  style="display: none">
         <div class="separate-line"></div>
         <section class="sec zhibo-data" id="matchResult">

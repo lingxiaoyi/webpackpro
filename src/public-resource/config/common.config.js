@@ -14,7 +14,7 @@ moduleExports.DIRS.SERVER_API_URL = moduleExports.SERVER_API_URL
 if (IS_PRODUCTION) { // 由于本脚手架并没有牵涉到HTTP请求，因此此处仅作为演示分离开发/生产环境之用。
     moduleExports.API_ROOT = 'http://msports.eastday.com/'
 } else {
-    moduleExports.API_ROOT = '/'
+    moduleExports.API_ROOT = 'http://172.18.3.236:8080/'
 }
 
 if (IS_PRODUCTION) { // 本项目所用的所有接口
@@ -25,6 +25,7 @@ if (IS_PRODUCTION) { // 本项目所用的所有接口
         HOST_DSP_DETAIL: 'http://dftyttd.dftoutiao.com/partner/detail',
         HOME_LUNBO_API: 'http://msports.eastday.com/json/msponts/home_lunbo.json',
         ORDER_API: 'http://dfty.dftoutiao.com/index.php/Home/WechatOrder/yuyue?system_id=9&machid=',
+        VIDEO_LOG: 'http://dfsportsapplog.dftoutiao.com/dfsportsapplog/videoact',
         RZAPI: {
             active: 'http://dfsportsdatapc.dftoutiao.com/dfsportsdatah5/active',
             onclick: 'http://dfsportsdatapc.dftoutiao.com/dfsportsdatah5/onclick',
@@ -39,6 +40,7 @@ if (IS_PRODUCTION) { // 本项目所用的所有接口
         HOST_DSP_DETAIL: 'http://106.75.98.65/partner/detail',
         HOME_LUNBO_API: 'http://msports.eastday.com/json/msponts/home_lunbo.json',
         ORDER_API: 'http://dfty.dftoutiao.com/index.php/Home/WechatOrder/yuyue?system_id=9&machid=',
+        VIDEO_LOG: 'http://172.18.250.87:8380/dfsportsapplog/videoact',
         RZAPI: {
             active: 'http://172.18.250.87:8380/dfsportsdatah5/active',
             onclick: 'http://172.18.250.87:8380/dfsportsdatah5/onclick',

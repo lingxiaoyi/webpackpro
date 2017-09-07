@@ -1,5 +1,6 @@
 import 'zepto/src/deferred'
 import 'zepto/src/callbacks'
+
 let util = {// 工具函数
     makeJsonp(url, data) {
         return $.ajax({
@@ -16,13 +17,13 @@ let util = {// 工具函数
             data: data,
             url: url,
             dataType: 'jsonp',
-            jsonp: 'jsonpcallback',
+            jsonp: 'jsonpcallback'
         })
     },
     getUrlParam(name) {
         let reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)') // 构造一个含有目标参数的正则表达式对象
         let r = window.location.search.substr(1).match(reg) // 匹配目标参数
-        if (r !== null) return unescape(r[2])
+        if (r !== null) return decodeURI(r[2])
         return null // 返回参数值
     },
     getScript(url, callback, element) {
@@ -45,8 +46,7 @@ let util = {// 工具函数
 
         if (document.all) { // IE
             js.onreadystatechange = function() {
-                if (js.readyState === 'loaded' ||
-                    js.readyState === 'complete') {
+                if (js.readyState === 'loaded' || js.readyState === 'complete') {
                     callbackFn()
                 }
             }
@@ -76,29 +76,23 @@ let util = {// 工具函数
          * @param expires 有效时间（单位：小时）（可选） 默认：24h
          */
         set: function(name, value, expires) {
-            let expTimes = expires
-                ? (Number(expires) * 60 * 60 * 1000)
-                : (24 * 60 * 60 * 1000) // 毫秒
+            let expTimes = expires ? (Number(expires) * 60 * 60 * 1000) : (24 * 60 * 60 * 1000) // 毫秒
             let expDate = new Date()
             expDate.setTime(expDate.getTime() + expTimes)
-            let expString = expires
-                ? ' expires=' + expDate.toUTCString()
-                : ''
-            let pathString = ' path=/'
-            document.cookie = name + '=' + encodeURI(value) + expString +
-                pathString
+            let expString = expires ? ' ;expires=' + expDate.toUTCString() : ''
+            let pathString = ' ; path=/'
+            document.cookie = name + '=' + encodeURI(value) + expString + pathString
         },
         /**
          * 读cookie
          * @param name
          */
         get: function(name) {
-            let cookieStr = ' ' + document.cookie + ' '
-            let index = cookieStr.indexOf(' ' + name + '=')
+            let cookieStr = '; ' + document.cookie + '; '
+            let index = cookieStr.indexOf('; ' + name + '=')
             if (index !== -1) {
-                let s = cookieStr.substring(index + name.length + 3,
-                    cookieStr.length)
-                return decodeURI(s.substring(0, s.indexOf(' ')))
+                let s = cookieStr.substring(index + name.length + 3, cookieStr.length)
+                return decodeURI(s.substring(0, s.indexOf('; ')))
             } else {
                 return null
             }
@@ -109,7 +103,7 @@ let util = {// 工具函数
          */
         del: function(name) {
             this.set(name, 'null', -1)
-        },
+        }
     },
     isWeiXin() {
         let ua = window.navigator.userAgent.toLowerCase()
@@ -144,9 +138,7 @@ let util = {// 工具函数
             version = agent.substr(index + 3, 3)
             os_type = 'iOS ' + version
         }
-        if (/Linux/i.test(navigator.userAgent) &&
-            !/android/i.test(navigator.userAgent) &&
-            !/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+        if (/Linux/i.test(navigator.userAgent) && !/android/i.test(navigator.userAgent) && !/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
             os_type = 'Linux'
         }
         if (/windows|win32/i.test(navigator.userAgent)) {
@@ -166,13 +158,10 @@ let util = {// 工具函数
         if (agent.indexOf('firefox') > 0) {
             browser_type = 'firefox'
         }
-        if (agent.indexOf('chrome') > 0 &&
-            agent.indexOf('mb2345browser') < 0 &&
-            agent.indexOf('360 aphone browser') < 0) {
+        if (agent.indexOf('chrome') > 0 && agent.indexOf('mb2345browser') < 0 && agent.indexOf('360 aphone browser') < 0) {
             browser_type = 'chrome'
         }
-        if (agent.indexOf('360 aphone browser') > 0 ||
-            agent.indexOf('qhbrowser') > 0) {
+        if (agent.indexOf('360 aphone browser') > 0 || agent.indexOf('qhbrowser') > 0) {
             browser_type = '360'
         }
         if (agent.indexOf('ucbrowser') > 0) {
@@ -181,8 +170,7 @@ let util = {// 工具函数
         if (agent.indexOf('micromessenger') > 0) {
             browser_type = 'WeChat'
         }
-        if ((agent.indexOf('mqqbrowser') > 0 || agent.indexOf('qq') > 0) &&
-            agent.indexOf('micromessenger') < 0) {
+        if ((agent.indexOf('mqqbrowser') > 0 || agent.indexOf('qq') > 0) && agent.indexOf('micromessenger') < 0) {
             browser_type = 'QQ'
         }
         if (agent.indexOf('miuibrowser') > 0) {
@@ -197,15 +185,7 @@ let util = {// 工具函数
         if (agent.indexOf('liebaofast') > 0) {
             browser_type = 'liebao'
         }
-        if (agent.indexOf('safari') > 0 && agent.indexOf('chrome') < 0 &&
-            agent.indexOf('ucbrowser') < 0 &&
-            agent.indexOf('micromessenger') < 0 &&
-            agent.indexOf('mqqbrowser') < 0 &&
-            agent.indexOf('miuibrowser') < 0 &&
-            agent.indexOf('mb2345browser') < 0 &&
-            agent.indexOf('sogoumobilebrowser') < 0 &&
-            agent.indexOf('liebaofast') < 0 &&
-            agent.indexOf('qhbrowser') < 0) {
+        if (agent.indexOf('safari') > 0 && agent.indexOf('chrome') < 0 && agent.indexOf('ucbrowser') < 0 && agent.indexOf('micromessenger') < 0 && agent.indexOf('mqqbrowser') < 0 && agent.indexOf('miuibrowser') < 0 && agent.indexOf('mb2345browser') < 0 && agent.indexOf('sogoumobilebrowser') < 0 && agent.indexOf('liebaofast') < 0 && agent.indexOf('qhbrowser') < 0) {
             browser_type = 'safari'
         }
         return browser_type
@@ -241,11 +221,15 @@ let util = {// 工具函数
         } else {
             // 通过搜索引擎进入的（渠道处理）
             specialChannel = [
-                {referer: 'baidu.com', qid: 'baiducom'}/* ,
-                     {referer: 'so.com', qid: '360so'},
-                     {referer: 'sogou.com', qid: 'sogoucom'},
-                     {referer: 'sm.cn', qid: 'smcn'},
-                     {referer: 'm.tq1.uodoo.com', qid: 'smcn'} */
+                {
+                    referer: 'baidu.com',
+                    qid: 'baiducom'
+                }
+                /* ,
+                                     {referer: 'so.com', qid: '360so'},
+                                     {referer: 'sogou.com', qid: 'sogoucom'},
+                                     {referer: 'sm.cn', qid: 'smcn'},
+                                     {referer: 'm.tq1.uodoo.com', qid: 'smcn'} */
             ]
             for (let i = 0; i < specialChannel.length; i++) {
                 if (util.getReferrer() && util.getReferrer().indexOf(specialChannel[i].referer) !== -1) {
@@ -263,10 +247,8 @@ let util = {// 工具函数
     getUid() {
         let uid = util.CookieUtil.get('uid')
         if (!uid) {
-            uid = (+new Date()) +
-                Math.random().toString(10).substring(2, 6)
-            util.CookieUtil.set('uid', uid,
-                {expires: 365, path: '/', domain: 'eastday.com'})
+            uid = (+new Date()) + Math.random().toString(10).substring(2, 6)
+            util.CookieUtil.set('uid', uid, 365)
         }
         return uid
     },
@@ -300,7 +282,15 @@ let util = {// 工具函数
         return minutes + ':' + seconds
     },
     formatDateToWeek(date) {
-        let weekDay = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+        let weekDay = [
+            '周日',
+            '周一',
+            '周二',
+            '周三',
+            '周四',
+            '周五',
+            '周六'
+        ]
         return date.format('MM-dd') + ' ' + weekDay[date.getDay()]
     }
 }

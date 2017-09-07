@@ -188,12 +188,12 @@ $(() => {
             html += `<li><h6>${title[1] + ' ' + title[0]}</h6>
                         <div class="clearfix">
                            <a href="${item.ismatched === 1 ? `${item.liveurl + '?tab=saikuang'}` : item.liveurl}"> <div class="item">
-                                <img src="${item.home_logoname}" alt=""/>
+                                <img src="${item.home_logoname ? item.home_logoname : config.DIRS.BUILD_FILE.images['logo_default']}" alt=""/>
                                 <p>${item.home_team}</p>
                             </div>
                             <div class="m">${mHtml}</div>
                             <a href="${item.ismatched === 1 ? `${item.liveurl + '?tab=saikuang'}` : item.liveurl}"><div class="item">
-                                <img src="${item.visit_logoname}" alt=""/>
+                                <img src="${item.visit_logoname ? item.visit_logoname : config.DIRS.BUILD_FILE.images['logo_default']}" alt=""/>
                                 <p>${item.visit_team}</p>
                             </div></a>
                         </div>

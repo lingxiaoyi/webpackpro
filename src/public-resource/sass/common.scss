@@ -90,30 +90,15 @@ header {
 .download-box .close{
   width:0.38rem;height:0.38rem;background: url(../../public-resource/imgs/i-close.png) center center no-repeat;background-size: 0.18rem 0.18rem;position: absolute;top:0;right:0;
 }
-/*svg下拉刷新按钮样式*/
-.svg {
-  position: absolute;
-  top: 1.4rem;
-  left: 50%;
-  z-index: 99;
-  display: block;
-  width: 40px;
-  height: 40px;
-  margin-left: -20px;
-  opacity: 0;
-  opacity: 0;
-  border-radius: 50%;
-  background-color: #fff;
-}
-.crumbs{
-  height:0.7rem;padding:0.2rem 0.25rem;background: #f3f3f3;
-  a{
-    font-size: 0.26rem;line-height: 0.26rem;
-  }
-  a.active{
-    color:#f62929;
-  }
-  i{
-    display: inline-block;width:0.35rem;height:0.26rem;background: url(../../public-resource/imgs/arr-right.png) no-repeat center;background-size: 0.12rem 0.2rem;vertical-align: -0.04rem;
-  }
-}
+.crumbs {  height: 0.9rem;padding:0 0.2rem; background: #f3f3f3; }
+.crumbs a {
+  font-size: 0.28rem;  line-height: 0.9rem;display: inline-block}
+.crumbs a.active {
+  color: #f62929; }
+.crumbs i {
+  display: inline-block;
+  width: 0.35rem;
+  height: 0.26rem;
+  background: url(../../public-resource/imgs/arr-right.png) no-repeat center;
+  background-size: 0.12rem 0.2rem;
+  vertical-align: -0.04rem; }

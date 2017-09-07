@@ -1,8 +1,46 @@
+<script src="//msite.baidu.com/sdk/c.js?appid=1570886644117804"></script>
 <div class="crumbs">
-    <a class="active" href="/">首页</a>
+    <a class="active" href="<%= API_ROOT %>">首页</a>
     <i></i>
-    <a href="javascript:;">直播</a>
+    <a href="javascript:;">$!{categoryFirst}</a>
 </div>
+<% if (IS_PRODUCTION) { %>
+<article id="J_article" class="J-article article">
+    <div id="title">
+        <div class="article-title">
+            <h1 class="title">$!{page.title}</h1>
+        </div>
+        <div class="article-src-time">
+            <span class="src">$!{page.pageSource}&nbsp;&nbsp;&nbsp;&nbsp;$!{time}</span>
+        </div>
+    </div>
+    <div style="margin: 0 16px -24px;" id="baiduhao"><script>cambrian.render('body')</script></div>
+
+    <div id="content" class="J-article-content article-content">
+
+        #set($idx=0)
+        #foreach($zw in $!{zws})
+        #if($zw == "" || $zw == "null")
+        #elseif($zw.contains("$#imgidx"))
+        #set($img = $!{page.imgs.get($idx).src})
+        #set($gifimg = $!gifimglist[$idx])
+        #set($paddingValue=$!{page.imgs.get($idx).imgheight}*1.0/$!{page.imgs.get($idx).imgwidth}*100)
+        <figure class="section img">
+            <a class="img-wrap" style="padding-bottom: $paddingValue%;" href="$!{img}" data-size="$!{page.imgs.get($idx).imgwidth} x $!{page.imgs.get($idx).imgheight}"><img width="100%" alt="" src="$!{img}" data-weight="588" data-width="$!{page.imgs.get($idx).imgwidth}" data-height="$!{page.imgs.get($idx).imgheight}" gif-minisrc="$!{page.converthttps($gifimg)}"></a>
+        </figure>
+        #set($idx=$idx+1)
+        #else
+        <p class="section txt">$zw</p>
+        #end
+        #end
+    </div>
+    <p class="article-tag clearfix">
+        #foreach($param in ${tagMap.entrySet()})
+        <a href="http://msports.eastday.com/index_items_news.html?typecode=${param.key}&name=${param.value}">${param.value} </a>
+        #end
+    </p>
+</article>
+<% }else { %>
 <article id="J_article" class="J-article article">
     <div id="title">
         <div class="article-title">
@@ -12,6 +50,7 @@
             <span class="src">2016-09-20 14:36&nbsp;&nbsp;&nbsp;&nbsp;来源：青衫负雪旗</span>
         </div>
     </div>
+    <div style="margin: 0 16px -24px;" id="baiduhao"><script>cambrian.render('body')</script></div>
     <div id="content" class="J-article-content article-content">
         <p class="section txt">
             随着热剧好先生的完结，其在中国电视剧中引起强烈反响！一时之间孙红雷被誉为国民老公风头一时无俩而好先生一剧被誉为“现象级”神剧，其犀利言辞胜似美剧的节奏感，无不给观众一个新的感官感受，而且在感情上给观众眼前焕然一新的感觉。而据好先生编剧所说，其实好先生是一个三部曲。现着手拍摄第二部。小编看来第一部都这么火这第二三部显然火是必不可少得了而好先生一剧被誉为“现象级”神剧，其犀利言辞胜似美剧的节奏感，</p>
@@ -23,7 +62,6 @@
                      src="//02.imgmini.eastday.com/mobile/20160920/20160920143629_efc51d5f1b0f77e8aa79a55806d8a89e_1.jpeg"
                      data-weight="595" data-width="595" data-height="391">
             </a>
-            <!-- <div class="imgdown-toapp"><h4>毛岸英死亡内幕终于曝光 竟瞒了国人60年</h4><span>打开东方头条</span></div> -->
         </figure>
         <figure class="section img">
             <a class="img-wrap" style="padding-bottom: 66.33%;"
@@ -47,6 +85,7 @@
         <a href="query-tag.html?typecode=900477&name=中国足球">凯尔特人</a>
     </p>
 </article>
+<% } %>
 <!-- news_check 适配安卓 -->
 <div id="news_check">
     <!-- 猜你感兴趣 -->
@@ -84,3 +123,30 @@
         </div>
     </div>
 </div>
+<% if (IS_PRODUCTION) { %>
+<script type="application/ld+json">
+    {
+        "@context": "https://zhanzhang.baidu.com/contexts/cambrian.jsonld",
+        "@id": "http://msports.eastday.com/a/$!{page.htmlname}",
+        "title": "$!{page.title}",
+        "images": [
+        	"$!{page.minijs[0].src}"
+            ],
+        "description": "$!{description}",
+        "pubDate": "$!{pubDate}"
+    }
+</script>
+<% }else { %>
+<script type="application/ld+json">
+    {
+        "@context": "https://zhanzhang.baidu.com/contexts/cambrian.jsonld",
+        "@id": "http://msports.eastday.com/a/170907075754310403119.html",
+        "title": "好先生第二部《恋爱先生》开拍啦！胡歌将取代孙红雷，搂着江疏影",
+        "images": [
+        	"//02.imgmini.eastday.com/mobile/20160920/20160920143629_efc51d5f1b0f77e8aa79a55806d8a89e_1.jpeg"
+            ],
+        "description": "好先生第二部《恋爱先生》开拍啦！胡歌将取代孙红雷，搂着江疏影",
+        "pubDate": "2016-09-20 14:36"
+    }
+</script>
+<% } %>

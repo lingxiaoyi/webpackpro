@@ -4,7 +4,6 @@ import config from 'configModule'
 import wx from 'weixin-js-sdk'
 import '../libs/lib.prototype'
 const _util_ = require('../libs/libs.util')
-//const _AD_ = require('../libs/ad.channel')
 let {HOST, HOST_LIVE} = config.API_URL
 $(() => {
     try {
