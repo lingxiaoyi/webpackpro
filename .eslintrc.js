@@ -58,7 +58,7 @@ module.exports = {
             'LabeledStatement',
             'WithStatement',
         ],
-
+        'no-template-curly-in-string': 0 //config.tagMap = '${tagMap.entrySet()}' 不会报错
     },
 };
 /*airbnb*/

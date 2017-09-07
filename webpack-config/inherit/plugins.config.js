@@ -43,7 +43,7 @@ let configPlugins = [
 
 pageArr.forEach((page) => {
     const htmlPlugin = new HtmlWebpackPlugin({
-        filename: `${page}.html`,
+        filename: `html/${page}.html`,
         template: path.resolve(dirlets.pagesDir, `./${page}/html`),
         chunks: ['webpack-runtime', page, 'static/commons'],
         hash: true, // 为静态资源生成hash值

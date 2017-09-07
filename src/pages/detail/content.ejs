@@ -14,7 +14,6 @@
         </div>
     </div>
     <div id="content" class="J-article-content article-content">
-
         #set($idx=0)
         #foreach($zw in $!{zws})
         #if($zw == "" || $zw == "null")
@@ -23,7 +22,7 @@
         #set($gifimg = $!gifimglist[$idx])
         #set($paddingValue=$!{page.imgs.get($idx).imgheight}*1.0/$!{page.imgs.get($idx).imgwidth}*100)
         <figure class="section img">
-            <a class="img-wrap" style="padding-bottom: $paddingValue%;" href="$!{page.convers($img)}" data-size="$!{page.imgs.get($idx).imgwidth} x $!{page.imgs.get($idx).imgheight}">
+            <a class="img-wrap" style="padding-bottom:$paddingValue%;" href="$!{page.convers($img)}" data-size="$!{page.imgs.get($idx).imgwidth} x $!{page.imgs.get($idx).imgheight}">
                 <img width="100%" alt="$!{page.title}" src="$!{page.convers($img)}" data-weight="588" data-width="$!{page.imgs.get($idx).imgwidth}" data-height="$!{page.imgs.get($idx).imgheight}" gif-minisrc="$!{gifimg}">
             </a>
         </figure>
@@ -34,8 +33,8 @@
         #end
     </div>
     <p class="article-tag clearfix">
-        #foreach($param in ${tagMap.entrySet()})
-        <a href="http://m.wa5.com/index_items_news.html?typecode=${param.key}&name=${param.value}">${param.value} </a>
+        #foreach($param in ${tagMap})
+        <a href="${API_ROOT}query-tag.html?typecode=${key}&name=${value}">${value} </a>
         #end
     </p>
 </article>
@@ -85,7 +84,6 @@
     </p>
 </article>
 <% } %>
-
 <!-- news_check 适配安卓 -->
 <div id="news_check">
     <!-- 猜你感兴趣 -->

@@ -1,3 +1,4 @@
+require('!!file-loader?name=index.html!../../index.html')
 module.exports = {
     js: {
         //html5shiv: require('!!file-loader?name=static/js/[name].[ext]!../../../vendor/ie-fix/html5shiv.min.js'),
@@ -6,6 +7,7 @@ module.exports = {
         hotcss: require('!!file-loader?name=static/js/[name].[ext]!../../../vendor/hotcss.js'),
     },
     images: {
+        'logo': require('!!url-loader?limit=8192&name=static/img/[hash]_[name].[ext]!../imgs/logo.png'),
         '404n': require('!!url-loader?limit=8192&name=static/img/[hash]_[name].[ext]!../imgs/404n.png'),
         'logo_default': require('!!url-loader?limit=8192&name=static/img/[hash]_[name].[ext]!../imgs/logo_default.png'),
         'i-s-saicheng': require('!!url-loader?limit=8192&name=static/img/[hash]_[name].[ext]!../imgs/i-s-saicheng.png'),
