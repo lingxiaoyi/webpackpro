@@ -703,7 +703,7 @@ $(() => {
                                         <div class="duration">${_util_.formatDuring(item.videoalltime)}</div></a>
                                      </div>
                                     <div class="info">
-                                        <div class="img"> <img src="${item.dfhheadsrc ? 'item.dfhheadsrc' : `${config.DIRS.BUILD_FILE.images['i-logo']}`}" alt=""> </div>
+                                        <div class="img"> <img src="${item.dfhheadsrc ? item.dfhheadsrc : `${config.DIRS.BUILD_FILE.images['i-logo']}`}" alt=""> </div>
                                         <div class="name">${item.dfhname ? item.dfhname : '五星体育'}</div>
                                         <div class="tag">
                                             
@@ -973,7 +973,7 @@ $(() => {
                                         <div class="duration">${_util_.formatDuring(item.videoalltime)}</div></a>
                                      </div>
                                     <div class="info">
-                                        <div class="img"> <img src="${item.dfhheadsrc ? 'item.dfhheadsrc' : `${config.DIRS.BUILD_FILE.images['i-logo']}`}" alt=""> </div>
+                                        <div class="img"> <img src="${item.dfhheadsrc ? item.dfhheadsrc : `${config.DIRS.BUILD_FILE.images['i-logo']}`}" alt=""> </div>
                                         <div class="name">${item.dfhname ? item.dfhname : '五星体育'}</div>
                                         <div class="tag"></div>
                                     </div>

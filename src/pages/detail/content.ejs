@@ -1,5 +1,5 @@
 <div class="crumbs">
-    <a class="active" href="<%= API_ROOT %>">首页</a>
+    <a class="active" href="<%= HOME_URL %>">首页</a>
     <i></i>
     <a href="javascript:;">$!{categoryFirst}</a>
 </div>
@@ -34,7 +34,7 @@
     </div>
     <p class="article-tag clearfix">
         #foreach($param in ${tagMap})
-        <a href="${API_ROOT}query-tag.html?typecode=${key}&name=${value}">${value} </a>
+        <a href="${HOME_URL}query-tag.html?typecode=${key}&name=${value}">${value} </a>
         #end
     </p>
 </article>

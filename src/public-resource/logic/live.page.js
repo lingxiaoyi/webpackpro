@@ -934,11 +934,17 @@ $(() => {
             let $zhibo_body = $('.zhibo_body')
             let $zhiboDataContent = $zhibo_body.children('.zhibo-data-content')
             let redirect = _util_.getUrlParam('redirect')
+            let that = this
             $zhiboMenu.on('click', 'a', function() {
                 $(this).parent().children().removeClass('active')
                 $(this).addClass('active')
                 let index = $(this).index()
                 $zhiboDataContent.hide()
+                if (index === 0) {
+                    that.flag = true
+                } else {
+                    that.flag = false
+                }
                 if ($(this).attr('href') === 'javascript:;') {
                     $zhiboDataContent.eq(index).show()
                     if (index === 1 && redirect === 'app') {

@@ -372,7 +372,6 @@ $(() => {
 
         //加载统计
         loadStatistics() {
-            let {keys} = Object//扩展object的方法
             $content.html(`<div class="tab-h" id="dataSlideNav"></div><div class="tab-b tab-all"></div>`)
             let $dataSlideNav = $('#dataSlideNav')
             let $tabB = $content.find('.tab-b')
@@ -550,11 +549,8 @@ $(() => {
             $dataSlideNav.find('.item').eq(0).click().click() //默认执行第一个 2个click为了兼容浏览器
             function initNav(dataType) {
                 let dataobj = tableList[dataType]
-                for (let item of keys(dataobj)) {
-                    /*if(index==0){
-                        $dataSlideNav.append(`<div class="item active" data-type="${item}">${dataobj[item]}</div>`)
-                    }else{}*/
-                    $dataSlideNav.append(`<div class="item" data-type="${item}">${dataobj[item]}</div>`)
+                for (let key in dataobj) {
+                    $dataSlideNav.append(`<div class="item" data-type="${key}">${dataobj[key]}</div>`)
                 }
             }
             function produceHtml(result) {
@@ -632,13 +628,13 @@ $(() => {
                     colNum = data[0].items.length
                     for (let j = 0; j < data.length; j++) {
                         html += `<div class="tab-b tab-p"><table><tr>`
-                        for (let [index, item] of data[j].items.entries()) {
+                        data[j].items.forEach(function(item, index) {
                             if (index === 0) {
                                 html += `<th colspan="2">${item}</th>`
                             } else if (index > 1) {
                                 html += `<th>${item}</th>`
                             }
-                        }
+                        })
                         let arrItems = data[j].items
                         html += `</tr>`
                         for (let i = 0; i < data[j].list.length; i++) {
@@ -657,13 +653,13 @@ $(() => {
                     for (let j = 0; j < data.length; j++) {
                         // 一共有这么多组
                         html += `<div class="tab-b  tab-p"><table><tr><th colspan="${colNum}" class="tc">${data[j].title}</th></tr><tr>`
-                        for (let [index, item] of items.entries()) {
+                        items.forEach(function(item, index) {
                             if (index === 0) {
                                 html += `<th colspan="2">${item}</th>`
                             } else if (index > 1) {
                                 html += `<th>${item}</th>`
                             }
-                        }
+                        })
                         html += `</tr>`
                         for (let i = 0; i < data[j].list.length; i++) {
                             html += `<tr>` // 每一组的总行
@@ -680,13 +676,13 @@ $(() => {
                     }
                 } else {
                     html += `<div class="tab-b tab-p"><table><tr>`
-                    for (let [index, item] of items.entries()) {
+                    items.forEach(function(item, index) {
                         if (index === 0) {
                             html += `<th colspan="2">${item}</th>`
                         } else if (index > 1) {
                             html += `<th>${item}</th>`
                         }
-                    }
+                    })
                     html += `</tr>`
                     for (let i = 0; i < data.length; i++) {
                         html += `<tr>`

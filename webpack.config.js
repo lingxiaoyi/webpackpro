@@ -1,4 +1,3 @@
-
 module.exports = {
   entry: require('./webpack-config/entry.config.js'),
 

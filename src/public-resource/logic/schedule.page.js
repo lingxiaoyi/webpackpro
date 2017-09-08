@@ -16,7 +16,7 @@ $(() => {
     // 赛程
     let $body = $('body')
     $body.append('<div id="J_loading" class="loading" style="display: none;"> <div class="spinner"> <div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div> <p class="txt">数据加载中</p> </div>')
-    $body.append('<div id="goTop"> <div class="top"></div> <div class="back"><a href="/"></a></div> </div>')
+    $body.append(`<div id="goTop"> <div class="top"></div> <div class="back"><a href="${config.HOME_URL}"></a></div> </div>`)
     let $goTop = $('#goTop')
     let $J_loading = $('#J_loading')
     let $insideNav = $('#insideNav')

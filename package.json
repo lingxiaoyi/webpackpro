@@ -4,7 +4,8 @@
   "description": "This is a seed for web application built by webpack",
   "scripts": {
     "build": "./node_modules/.bin/webpack --env=pro --progress --colors --bail",
-    "dev": "./node_modules/.bin/webpack --env=dev --progress --colors --config ./webpack.dev.config.js",
+    "buildtest": "./node_modules/.bin/webpack  --progress --colors --bail",
+    "dev": "./node_modules/.bin/webpack  --progress --colors --config ./webpack.dev.config.js",
     "start": "./node_modules/.bin/webpack-dev-server --config ./webpack.dev.config.js --open --hot",
     "soucemap": "./node_modules/.bin/webpack-dev-server --config ./webpack.dev.soucemap.config.js --open --hot",
     "profile": "./node_modules/.bin/webpack --colors --profile --display-modules --config ./webpack.dev.config.js",

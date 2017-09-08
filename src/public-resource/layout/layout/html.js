@@ -1,5 +1,4 @@
 const config = require('configModule')
-const noJquery = require('withoutJqueryModule')
 const layout = require('./html.ejs') // 整个页面布局的模板文件，主要是用来统筹各个公共组件的结构
 const header = require('../../components/header/html.ejs') // 页头的模板
 const footer = require('../../components/footer/html.ejs') // 页脚的模板
@@ -14,8 +13,7 @@ const pf = {
     pageTitle: '',
     crumbsHtml: '',
     scriptHtml: '',
-    statisticsHtml: statisticsHtml,
-    constructInsideUrl: noJquery.constructInsideUrl
+    statisticsHtml: statisticsHtml
 }
 
 const moduleExports = {

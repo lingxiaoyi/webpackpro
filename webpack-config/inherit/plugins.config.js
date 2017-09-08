@@ -47,7 +47,8 @@ pageArr.forEach((page) => {
         template: path.resolve(dirlets.pagesDir, `./${page}/html`),
         chunks: ['webpack-runtime', page, 'static/commons'],
         hash: true, // 为静态资源生成hash值
-        xhtml: true
+        xhtml: false, //是否渲染link为自闭合的标签，true则为自闭合标签
+        minify: false
     })
     configPlugins.push(htmlPlugin)
 })
