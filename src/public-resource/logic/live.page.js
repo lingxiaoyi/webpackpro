@@ -3,6 +3,7 @@ import FastClick from 'fastclick'
 import config from 'configModule'
 import wx from 'weixin-js-sdk'
 import '../libs/lib.prototype'
+import './log.js'
 const _util_ = require('../libs/libs.util')
 let {HOST, HOST_LIVE} = config.API_URL
 $(() => {

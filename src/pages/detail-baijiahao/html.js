@@ -5,6 +5,7 @@ let scriptHtml = require('../detail/templates/script-var.ejs')
 const pageTitle = '$!{page.title}'
 const pageKeywords = '$!{page.title}'
 const pageDescription = '$!{description}'
+const canonical = config.HOME_URL + 'a/$!{page.htmlname}'
 const hasLogo = false
 scriptHtml = scriptHtml()
 config.tagMap = '${tagMap.entrySet()}'
@@ -14,6 +15,7 @@ module.exports = layout.init({
     pageTitle,
     pageKeywords,
     pageDescription,
+    canonical,
     scriptHtml,
     hasLogo
 }).run(content(config))

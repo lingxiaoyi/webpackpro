@@ -292,6 +292,25 @@ let util = {// 工具函数
             '周六'
         ]
         return date.format('MM-dd') + ' ' + weekDay[date.getDay()]
+    },
+    getpgtype() {
+        if ($('#livebox').length) { //文字直播
+            return 1
+        } else if ($('#J_article').length) { //新闻
+            return 0
+        } else { //其他
+            return 2
+        }
+    },
+    getSuffixParam(str) {
+        if (!str) return {}
+        str = str.split('&')
+        let obj = {}
+        for (let v of str) {
+            let s = v.split('=')
+            obj[s[0]] = s[1]
+        }
+        return obj
     }
 }
 

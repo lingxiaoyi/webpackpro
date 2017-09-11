@@ -1,6 +1,7 @@
 import 'pages/data/data_all.scss'
 import 'pages/data/data_rank_basketball.scss'
 import 'pages/data/nba_jihousai.scss'
+import './log.js'
 import WebStorageCache from 'web-storage-cache'
 import FastClick from 'fastclick'
 import config from 'configModule'

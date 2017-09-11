@@ -1,4 +1,5 @@
 import 'pages/schedule/style.scss'
+import './log.js'
 import FastClick from 'fastclick'
 $(() => {
     try {

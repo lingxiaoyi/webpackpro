@@ -1,4 +1,5 @@
 import 'pages/detail/style.scss'
+import './log.news.js'
 import FastClick from 'fastclick'
 import WebStorageCache from 'web-storage-cache'
 import config from 'configModule'
@@ -112,12 +113,18 @@ $(() => {
                 //猜你喜欢广告;
                 $interestNews.html('<div class="section-title in-title"><h2>猜你喜欢</h2></div><section style="padding:0.15rem 0.24rem 0.15rem"><div id="' + _detailsGg_[2] + '"></div></section><div class="separate-line"></div>')
                _util_.getScript('//tt123.eastday.com/' + _detailsGg_[2] + '.js', function() {}, $('#' + _detailsGg_[1])[0])
-                //下方悬浮广告 暂无
-                /*$interestNews.append('<section><div id="'+ _detailsGg_[3] +'"></div></section>');
-                _util_.getScript('//tt123.eastday.com/' + _detailsGg_[3] + '.js', function(){}, $('#' + _detailsGg_[1])[0]);*/
-                //相关阅读部分
-                /*$interestNews.after('<div class="section-title hn-title"><h2>相关阅读</h2></div><div id="J_xg_list" class="hn-list"></div><div class="separate-line"></div>');
-                 scope.getRelatedNews();*/
+                //猜你喜欢下方3图广告和2个文字链广告
+                if (this.channel === 'tiyuvivobrowser01') {
+                    detailGGAddThree[this.channel].reverse().forEach(function(item) {
+                        $interestNews.after(`<section class="gg-item"  style="padding:0 0.24rem;"><div id="${item}"></div></section>`)
+                        _util_.getScript(`//tt123.eastday.com/${item}.js`, function() {}, $(`#${item}`)[0])
+                    })
+                } else {
+                    detailGGAddThree['null'].reverse().forEach(function(item) {
+                        $interestNews.after(`<section class="gg-item"  style="padding:0 0.24rem;"><div id="${item}"></div></section>`)
+                        _util_.getScript(`//tt123.eastday.com/${item}.js`, function() {}, $(`#${item}`)[0])
+                    })
+                }
                 //热点推荐部分;
                 $hotNews.append('<div class="section-title hn-title"><h2>热点推荐</h2></div>')
                 $hotNews.append($hnList)
@@ -428,6 +435,7 @@ $(() => {
         }
         let en = new Detail(qid, typecode)
         let _detailsGg_ = _AD_.detailList[qid].concat(_AD_.detailNoChannel)
+        let detailGGAddThree = _AD_.detailGGAddThree
         en.init()
     })()
     ;(function shareWebPage() {

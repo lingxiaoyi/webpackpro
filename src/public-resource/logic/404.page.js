@@ -1,7 +1,7 @@
 import 'pages/404/style.scss'
 import FastClick from 'fastclick'
 import config from 'configModule'
-
+import './log.js'
 const _util_ = require('../libs/libs.util')
 let {HOST} = config.API_URL
 $(() => {

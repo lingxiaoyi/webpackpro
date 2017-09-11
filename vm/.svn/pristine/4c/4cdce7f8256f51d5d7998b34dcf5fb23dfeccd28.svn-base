@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="hotcss" content="initial-dpr=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="x5-page-mode" content="no-title">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="applicable-device" content="mobile">
+    <link rel="canonical" href="http://msports.eastday.com/a/$!{page.htmlname}">
+    <meta name="Copyright" content="东方体育©版权所有">
+    <link rel="shortcut icon" href="http://msports.eastday.com/h5/static/img/339c9cf23e99a54b2b548cb6e7d29b64_favicon.ico">
+    <link rel="bookmark" href="http://msports.eastday.com/h5/static/img/339c9cf23e99a54b2b548cb6e7d29b64_favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="http://msports.eastday.com/h5/static/img/339c9cf23e99a54b2b548cb6e7d29b64_favicon.ico">
+    <link rel="dns-prefetch" href="http://msports.eastday.com/">
+    <title>$!{page.title}_东方体育</title>
+    <meta name="keywords" content="$!{page.tags}"/>
+    <meta name="description" content="$!{description}"/>
+    <script src="http://msports.eastday.com/h5/static/js/hotcss.js"></script>
+    <link rel="stylesheet" href="http://msports.eastday.com/h5/static/dll/dll.css">
+    <script>
+    
+    var _sportsType_ = "$!{categoryFirst}";
+    var _articleTagCodes_ = "$!{codeList}";
+    var _isOriginal_ = "$!{page.isoriginal}";
+    var _yiji_ = "$!{yiji}";
+    var _erji_ = "$!{erji}";
+    var _sanji_ = "$!{sanji}";
+    var _newstype_ = "$!{newstype}";
+    var _isdftt_ = "$!{isdftt}";
+    
+</script>
+     <script>
+      var _hmt = _hmt || [];
+      (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?e0473a08fb9ff15bce7ba6b6152f2c7c";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+<link href="http://msports.eastday.com/h5/static/detail/styles.83a3848bcd7055653d2988e9f0eb5175.css?02ae500d6b20cc8ef97c" rel="stylesheet"></head>
+<body id="indexNew">
+
+<div class="crumbs">
+    <a class="active" href="http://msports.eastday.com/">首页</a>
+    <i></i>
+    <a href="javascript:;">$!{categoryFirst}</a>
+</div>
+
+<article id="J_article" class="J-article article">
+    <div id="title">
+        <div class="article-title">
+            <h1 class="title">$!{page.title}</h1>
+        </div>
+        <div class="article-src-time">
+            <span class="src">$!{page.pageSource}&nbsp;&nbsp;&nbsp;&nbsp;$!{time}</span>
+        </div>
+    </div>
+    <div id="content" class="J-article-content article-content">
+        #set($idx=0)
+        #foreach($zw in $!{zws})
+        #if($zw == "" || $zw == "null")
+        #elseif($zw.contains("$#imgidx"))
+        #set($img = $!{page.imgs.get($idx).src})
+        #set($gifimg = $!gifimglist[$idx])
+        #set($paddingValue=$!{page.imgs.get($idx).imgheight}*1.0/$!{page.imgs.get($idx).imgwidth}*100)
+        <figure class="section img">
+            <a class="img-wrap" style="padding-bottom:$paddingValue%;" href="$!{page.convers($img)}" data-size="$!{page.imgs.get($idx).imgwidth} x $!{page.imgs.get($idx).imgheight}">
+                <img width="100%" alt="$!{page.title}" src="$!{page.convers($img)}" data-weight="588" data-width="$!{page.imgs.get($idx).imgwidth}" data-height="$!{page.imgs.get($idx).imgheight}" gif-minisrc="$!{gifimg}">
+            </a>
+        </figure>
+        #set($idx=$idx+1)
+        #else
+        <p class="section txt">$zw</p>
+        #end
+        #end
+    </div>
+    <p class="article-tag clearfix">
+        #foreach($param in ${tagMap.entrySet()})
+        <a href="http://msports.eastday.com/query-tag.html?typecode=${param.key}&name=${param.value}">${param.value} </a>
+        #end
+    </p>
+</article>
+
+<!-- news_check 适配安卓 -->
+<div id="news_check">
+    <!-- 猜你感兴趣 -->
+    <div id="J_interest_news" class="interest-news">
+    </div>
+    <!-- 热点新闻 -->
+    <div id="J_hot_news" class="hot-news"></div>
+</div>
+<!-- 图片浏览 -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="display: none">
+    <a href="http://msports.eastday.com/sitemap.xml"></a>
+</div>
+<script src="http://msports.eastday.com/h5/static/dll/dll.js"></script>
+
+<script type="text/javascript" src="http://msports.eastday.com/h5/static/commons/webpack-runtime.02ae500d6b20cc8ef97c.js?02ae500d6b20cc8ef97c"></script><script type="text/javascript" src="http://msports.eastday.com/h5/static/commons/commons.7e3dde34318e04123e78.js?02ae500d6b20cc8ef97c"></script><script type="text/javascript" src="http://msports.eastday.com/h5/static/detail/entry.ff388a73ea087a2dd017.js?02ae500d6b20cc8ef97c"></script></body>
+</html>

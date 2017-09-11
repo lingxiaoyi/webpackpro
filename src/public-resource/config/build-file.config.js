@@ -7,6 +7,7 @@ module.exports = {
         hotcss: require('!!file-loader?name=static/js/[name].[ext]!../../../vendor/hotcss.js'),
     },
     images: {
+        'favicon': require('!!url-loader?limit=1&name=static/img/[hash]_[name].[ext]!../imgs/favicon.ico'), //这个文件用地址好看 可以用base64
         'logo': require('!!url-loader?limit=8192&name=static/img/[hash]_[name].[ext]!../imgs/logo.png'),
         '404n': require('!!url-loader?limit=8192&name=static/img/[hash]_[name].[ext]!../imgs/404n.png'),
         'logo_default': require('!!url-loader?limit=8192&name=static/img/[hash]_[name].[ext]!../imgs/logo_default.png'),

@@ -7,6 +7,7 @@ import 'zepto/src/fx'
 import 'zepto/src/fx_methods'
 import 'zepto/src/touch'
 import 'zepto/src/gesture'
+import './log.js'
 import WebStorageCache from 'web-storage-cache'
 import Swiper from 'swiper'
 import FastClick from 'fastclick'
@@ -309,6 +310,9 @@ $(() => {
                 case 'tuijian':
                     this.loadRecommendCol()
                     break
+                case 'shipin':
+                    this.initNews()
+                    break
                 default:
                     this.loadOtherCol()
             }
@@ -358,6 +362,11 @@ $(() => {
                     autoplay: 4000,
                     autoplayDisableOnInteraction: false
                 })
+            }).done(function() { //加广告
+                let _ggID_ = _AD_['indexGGAddThree'][_qid_]
+                $el.before(`<div><div id="${_ggID_}"></div></div>`)
+                _util_.getScript(`http://tt123.eastday.com/${_ggID_}.js`, function() {
+                }, $(`#${_ggID_}`)[0])
             })
 
             function produceHtml(result) {

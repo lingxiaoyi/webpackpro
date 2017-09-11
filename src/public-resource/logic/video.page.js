@@ -1,7 +1,6 @@
 import 'pages/video/style.scss'
 import FastClick from 'fastclick'
 import config from 'configModule'
-
 const _util_ = require('../libs/libs.util')
 const _AD_ = require('../libs/ad.channel')
 let {HOST, VIDEO_LOG, RZAPI} = config.API_URL
@@ -441,7 +440,7 @@ $(() => {
                 let playingTime = $vd.attr('data-playingTime') ? $vd.attr('data-playingTime') : 'null'
                 let currentTime = Math.floor(video.currentTime * 1000) // 当前播放时间位置
                 let locationUrl = 'http://' + window.location.host + window.location.pathname //当前url
-                let param = scope.qid + '\t' + scope.userId + '\t' + 'wuxingtiyu' + '\t' + 'WXTYH5' + '\t' + 'null' + '\t' + videoType + '\t' + scope.os + '\t' + (idx || 'null') + '\t' + scope.browserType + '\t' + src + '\t' + duration + '\t' + playingTime + '\t' + currentTime + '\t' + 'play' + '\t' + 'detailpg' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + locationUrl
+                let param = scope.qid + '\t' + scope.userId + '\t' + 'dongfangtiyu' + '\t' + 'DFTYH5' + '\t' + 'null' + '\t' + videoType + '\t' + scope.os + '\t' + (idx || 'null') + '\t' + scope.browserType + '\t' + src + '\t' + duration + '\t' + playingTime + '\t' + currentTime + '\t' + 'play' + '\t' + 'detailpg' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + locationUrl
                 // 用于记录实际播放时长（很重要）利用了先触发start再触发timeupdate的这个规则来更新开始计时时间.
                 $vd.attr('data-updateTime', +new Date())
                 scope.sendVideoLog(param)
@@ -461,7 +460,8 @@ $(() => {
                 let videoType = $vd.attr('data-type')
                 let playingTime = $vd.attr('data-playingTime') ? $vd.attr('data-playingTime') : 'null'
                 let currentTime = Math.floor(video.currentTime * 1000) // 当前播放时间位置
-                let param = scope.qid + '\t' + scope.userId + '\t' + 'wuxingtiyu' + '\t' + 'WXTYH5' + '\t' + 'null' + '\t' + videoType + '\t' + scope.os + '\t' + (idx || 'null') + '\t' + scope.browserType + '\t' + src + '\t' + duration + '\t' + playingTime + '\t' + currentTime + '\t' + 'pause' + '\t' + 'detailpg' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null'
+                let locationUrl = 'http://' + window.location.host + window.location.pathname //当前url
+                let param = scope.qid + '\t' + scope.userId + '\t' + 'dongfangtiyu' + '\t' + 'DFTYH5' + '\t' + 'null' + '\t' + videoType + '\t' + scope.os + '\t' + (idx || 'null') + '\t' + scope.browserType + '\t' + src + '\t' + duration + '\t' + playingTime + '\t' + currentTime + '\t' + 'pause' + '\t' + 'detailpg' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + 'null' + '\t' + locationUrl
                 scope.sendVideoLog(param)
                 // 兼容处理（在小米浏览器上碰到过一次，点击播放就会触发暂停，导致出现广告）
                 if (Math.floor($video[0].currentTime * 1000) > 1000 && $video[0].paused) {

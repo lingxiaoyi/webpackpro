@@ -143,6 +143,21 @@ module.exports = {
             'fasgzcwgzdh',
             'gbthadxhceix',
             'hcuibeyiefjzb'
+        ],
+        'tiyucjskzs': [
+            'gbthddkxxeix',
+            'hcuieelyzfjzb',
+            'idvjffmzcgkcef',
+            'jewkggnafhlfgmk'
+        ]
+
+    },
+    indexGGAddThree: { //轮播图上方
+        'tiyuoppobrowser01': [
+            'jewkgmkdbhlfgmk'
+        ],
+        'tiyuvivobrowser01': [
+            'mhznjpnepkon'
         ]
     },
     videoList: {
@@ -289,6 +304,12 @@ module.exports = {
             'cxpdyumwgaedgm',
             'bwocxtlvczdec',
             'gbthcyqayeix'
+        ],
+        'tiyucjskzs': [
+            'mhznjjqepkon',
+            'ezrfbbiyfcgorvwy',
+            'gbthddkaqeix',
+            'hcuieelbufjzb'
         ]
     },
     detailList: {
@@ -525,7 +546,28 @@ module.exports = {
             '',
             'avnbuxrebycx',
             'bwocvysffzdec',
-            'dyqexauhqbfhnqu'
+            'dyqexauhqbfhnqu',
+        ],
+        'tiyucjskzs': [
+            'idvjffmaagkcef',
+            'kfxlhhocgimhnlou',
+            'lgymiipdijn',
+            '',
+            'lgymiipcojn',
+            'ezrfbbiwicgorvwy',
+            'gbthddkyteix'
+        ]
+    },
+    detailGGAddThree: {
+        'null': [
+            'ojbplrpllmqybf',
+            'avnbxdebeycx',
+            'ezrfbhifwcgorvwy'
+        ],
+        'tiyuvivobrowser01': [
+            'rmesouvuupt',
+            'ezrfbhofvcgorvwy',
+            'fasgcipgxdh'
         ]
     },
     indexNoChannel: [

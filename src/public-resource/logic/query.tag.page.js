@@ -1,4 +1,5 @@
 import 'pages/query-tag/style.scss'
+import './log.js'
 import FastClick from 'fastclick'
 import config from 'configModule'
 const _util_ = require('../libs/libs.util')

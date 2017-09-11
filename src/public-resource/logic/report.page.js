@@ -1,5 +1,6 @@
 import 'pages/liveing/style.scss'
 import 'pages/report/style.scss'
+import './log.js'
 import FastClick from 'fastclick'
 import WebStorageCache from 'web-storage-cache'
 import config from 'configModule'

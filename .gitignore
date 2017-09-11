@@ -10,6 +10,7 @@ $RECYCLE.BIN/
 node_modules
 build
 dist
+vm
 .idea
 
 # Windows Installer files

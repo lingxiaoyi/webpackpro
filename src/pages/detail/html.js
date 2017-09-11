@@ -2,9 +2,10 @@ const content = require('./content.ejs')
 const layout = require('layout')
 const config = require('configModule')
 let scriptHtml = require('./templates/script-var.ejs')
-const pageTitle = '$!{page.title}'
-const pageKeywords = '$!{page.title}'
+const pageTitle = '$!{page.title}_东方体育'
+const pageKeywords = '$!{page.tags}'
 const pageDescription = '$!{description}'
+const canonical = config.HOME_URL + 'a/$!{page.htmlname}'
 const hasLogo = false
 scriptHtml = scriptHtml()
 config.tagMap = '${tagMap.entrySet()}'
@@ -14,6 +15,7 @@ module.exports = layout.init({
     pageTitle,
     pageKeywords,
     pageDescription,
+    canonical,
     scriptHtml,
     hasLogo
 }).run(content(config))

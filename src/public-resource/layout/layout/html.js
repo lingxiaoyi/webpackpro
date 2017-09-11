@@ -18,10 +18,11 @@ const pf = {
 
 const moduleExports = {
     /* 处理各个页面传入而又需要在公共区域用到的参数 */
-    init({pageTitle = '', crumbsHtml = '', pageKeywords = '', pageDescription = '', scriptHtml = '', hasLogo = true}) {
+    init({pageTitle = '', crumbsHtml = '', pageKeywords = '', pageDescription = '', canonical = config.HOME_URL, scriptHtml = '', hasLogo = true}) {
         pf.pageTitle = pageTitle
         pf.pageKeywords = pageKeywords
         pf.pageDescription = pageDescription
+        pf.canonical = canonical
         pf.crumbsHtml = crumbsHtml //头部小面包屑
         pf.scriptHtml = scriptHtml //script里的固定变量
         pf.hasLogo = hasLogo //判断有没有logo栏 默认定义false 有logo栏
