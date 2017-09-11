@@ -35,7 +35,7 @@ $(() => {
     function Detail(channel, tpyecode) {
         this.host = HOST
         this.channel = channel
-        this.index = 4 //热点 新闻中的广告起始下标
+        this.index = 4 //热点新闻中的广告起始下标
         this.startkey = ''
         this.typecode = tpyecode.join('|')
         this.idx = 1 //热点新闻中的位置下标

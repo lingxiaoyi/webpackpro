@@ -127,5 +127,5 @@
 </div>
 <script src="http://172.18.3.236:8080/static/dll/dll.js"></script>
 
-<script type="text/javascript" src="http://172.18.3.236:8080/static/commons/webpack-runtime.8775d28723a5af2db79b.js"></script><script type="text/javascript" src="http://172.18.3.236:8080/static/commons/commons.149c95cb418fce6a539a.js"></script><script type="text/javascript" src="http://172.18.3.236:8080/static/detail/entry.a854b0ed6dd4ca465872.js"></script></body>
+<script type="text/javascript" src="http://172.18.3.236:8080/static/commons/webpack-runtime.85c8dc50ecd679ab127d.js"></script><script type="text/javascript" src="http://172.18.3.236:8080/static/commons/commons.149c95cb418fce6a539a.js"></script><script type="text/javascript" src="http://172.18.3.236:8080/static/detail/entry.a854b0ed6dd4ca465872.js"></script></body>
 </html>
