@@ -41,7 +41,7 @@
           s.parentNode.insertBefore(hm, s);
       })();
   </script>
-<link href="http://172.18.3.236:8080/static/detail/styles.83a3848bcd7055653d2988e9f0eb5175.css?38f59ba524cdb63bbec4" rel="stylesheet"></head>
+<link href="http://172.18.3.236:8080/static/detail/styles.83a3848bcd7055653d2988e9f0eb5175.css" rel="stylesheet"></head>
 <body id="indexNew">
 
 <div class="crumbs">
@@ -127,5 +127,5 @@
 </div>
 <script src="http://172.18.3.236:8080/static/dll/dll.js"></script>
 
-<script type="text/javascript" src="http://172.18.3.236:8080/static/commons/webpack-runtime.38f59ba524cdb63bbec4.js?38f59ba524cdb63bbec4"></script><script type="text/javascript" src="http://172.18.3.236:8080/static/commons/commons.e985dcbea94dd5be161f.js?38f59ba524cdb63bbec4"></script><script type="text/javascript" src="http://172.18.3.236:8080/static/detail/entry.a854b0ed6dd4ca465872.js?38f59ba524cdb63bbec4"></script></body>
+<script type="text/javascript" src="http://172.18.3.236:8080/static/commons/webpack-runtime.8775d28723a5af2db79b.js"></script><script type="text/javascript" src="http://172.18.3.236:8080/static/commons/commons.149c95cb418fce6a539a.js"></script><script type="text/javascript" src="http://172.18.3.236:8080/static/detail/entry.a854b0ed6dd4ca465872.js"></script></body>
 </html>
