@@ -22,8 +22,8 @@
         #set($gifimg = $!gifimglist[$idx])
         #set($paddingValue=$!{page.imgs.get($idx).imgheight}*1.0/$!{page.imgs.get($idx).imgwidth}*100)
         <figure class="section img">
-            <a class="img-wrap" style="padding-bottom:$paddingValue%;" href="$!{page.convers($img)}" data-size="$!{page.imgs.get($idx).imgwidth} x $!{page.imgs.get($idx).imgheight}">
-                <img width="100%" alt="$!{page.title}" src="$!{page.convers($img)}" data-weight="588" data-width="$!{page.imgs.get($idx).imgwidth}" data-height="$!{page.imgs.get($idx).imgheight}" gif-minisrc="$!{gifimg}">
+            <a class="img-wrap" style="padding-bottom:$paddingValue%;" href="<%= isOnlinepro?'$!{page.converthttps($img)}':'$!{img}' %>" data-size="$!{page.imgs.get($idx).imgwidth} x $!{page.imgs.get($idx).imgheight}">
+                <img width="100%" alt="$!{page.title}" src="<%= isOnlinepro?'$!{page.converthttps($img)}':'$!{img}' %>" data-weight="588" data-width="$!{page.imgs.get($idx).imgwidth}" data-height="$!{page.imgs.get($idx).imgheight}" gif-minisrc="<%= isOnlinepro?'$!{page.converthttps($gifimg)}':'$!{gifimg}' %>">
             </a>
         </figure>
         #set($idx=$idx+1)
@@ -51,7 +51,7 @@
     <div id="content" class="J-article-content article-content">
         <p class="section txt">
             随着热剧好先生的完结，其在中国电视剧中引起强烈反响！一时之间孙红雷被誉为国民老公风头一时无俩而好先生一剧被誉为“现象级”神剧，其犀利言辞胜似美剧的节奏感，无不给观众一个新的感官感受，而且在感情上给观众眼前焕然一新的感觉。而据好先生编剧所说，其实好先生是一个三部曲。现着手拍摄第二部。小编看来第一部都这么火这第二三部显然火是必不可少得了而好先生一剧被誉为“现象级”神剧，其犀利言辞胜似美剧的节奏感，</p>
-        <figure class="section img">
+       <!-- <figure class="section img">
             <a class="img-wrap" style="padding-bottom: 65.71%;"
                href="//02.imgmini.eastday.com/mobile/20160920/20160920143629_efc51d5f1b0f77e8aa79a55806d8a89e_1.jpeg"
                data-size="595x391">
@@ -59,9 +59,9 @@
                      src="//02.imgmini.eastday.com/mobile/20160920/20160920143629_efc51d5f1b0f77e8aa79a55806d8a89e_1.jpeg"
                      data-weight="595" data-width="595" data-height="391">
             </a>
-            <!-- <div class="imgdown-toapp"><h4>毛岸英死亡内幕终于曝光 竟瞒了国人60年</h4><span>打开东方头条</span></div> -->
-        </figure>
-        <figure class="section img">
+            &lt;!&ndash; <div class="imgdown-toapp"><h4>毛岸英死亡内幕终于曝光 竟瞒了国人60年</h4><span>打开东方头条</span></div> &ndash;&gt;
+        </figure>-->
+       <!-- <figure class="section img">
             <a class="img-wrap" style="padding-bottom: 66.33%;"
                href="https://02.imgmini.eastday.com/mobile/20160920/20160920143629_efc51d5f1b0f77e8aa79a55806d8a89e_2.jpeg"
                data-size="588x390"><img width="100%" alt=""
@@ -74,7 +74,7 @@
                data-size="550x366"><img width="100%" alt=""
                                         src="//02.imgmini.eastday.com/mobile/20160920/20160920143629_efc51d5f1b0f77e8aa79a55806d8a89e_3.jpeg"
                                         data-weight="550" data-width="550" data-height="366"></a>
-        </figure>
+        </figure>-->
 
     </div>
     <!-- <div class="copyright">来源：东方体育   欢迎分享，转载请注明出处。</div>-->

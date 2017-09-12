@@ -108,6 +108,8 @@ $(() => {
                 //文章下方加展开全文
                 if ($article.height() >= 1100) {
                     $article.after('<div class="unfold-field"  id="unfoldField"><div class="unflod-field__mask"></div><a href="javascript:void(0)" class="unfold-field__text">展开全文</a></div>')
+                } else {
+                    $article.after('<div class="unfold-field"  id="unfoldField"></div>')
                 }
 
                 //猜你喜欢广告;

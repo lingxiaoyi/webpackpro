@@ -12,6 +12,8 @@ build
 dist
 vm
 .idea
+.svn
+*.svn
 
 # Windows Installer files
 *.cab

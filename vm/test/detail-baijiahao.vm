@@ -9,17 +9,17 @@
     <meta name="x5-page-mode" content="no-title">
     <meta name="format-detection" content="telephone=no">
     <meta name="applicable-device" content="mobile">
-    <link rel="canonical" href="http://msports.eastday.com/a/$!{page.htmlname}">
+    <link rel="canonical" href="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/html/a/$!{page.htmlname}">
     <meta name="Copyright" content="东方体育©版权所有">
-    <link rel="shortcut icon" href="http://172.18.3.236:8080/static/img/339c9cf23e99a54b2b548cb6e7d29b64_favicon.ico">
-    <link rel="bookmark" href="http://172.18.3.236:8080/static/img/339c9cf23e99a54b2b548cb6e7d29b64_favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon-precomposed" href="http://172.18.3.236:8080/static/img/339c9cf23e99a54b2b548cb6e7d29b64_favicon.ico">
-    <link rel="dns-prefetch" href="http://msports.eastday.com/">
+    <link rel="shortcut icon" href="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/img/339c9cf23e99a54b2b548cb6e7d29b64_favicon.ico">
+    <link rel="bookmark" href="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/img/339c9cf23e99a54b2b548cb6e7d29b64_favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/img/339c9cf23e99a54b2b548cb6e7d29b64_favicon.ico">
+    <link rel="dns-prefetch" href="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/html/">
     <title>$!{page.title}</title>
     <meta name="keywords" content="$!{page.title}"/>
     <meta name="description" content="$!{description}"/>
-    <script src="http://172.18.3.236:8080/static/js/hotcss.js"></script>
-    <link rel="stylesheet" href="http://172.18.3.236:8080/static/dll/dll.css">
+    <script src="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/js/hotcss.js"></script>
+    <link rel="stylesheet" href="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/dll/dll.css">
     <script>
     
     var _sportsType_ = "$!{categoryFirst}";
@@ -41,12 +41,13 @@
           s.parentNode.insertBefore(hm, s);
       })();
   </script>
-<link href="http://172.18.3.236:8080/static/detail-baijiahao/styles.83a3848bcd7055653d2988e9f0eb5175.css" rel="stylesheet"></head>
+<link href="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/detail-baijiahao/styles.83a3848bcd7055653d2988e9f0eb5175.css" rel="stylesheet"></head>
 <body id="indexNew">
+
 
 <script src="//msite.baidu.com/sdk/c.js?appid=1570886644117804"></script>
 <div class="crumbs">
-    <a class="active" href="http://msports.eastday.com/">首页</a>
+    <a class="active" href="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/html/">首页</a>
     <i></i>
     <a href="javascript:;">$!{categoryFirst}</a>
 </div>
@@ -72,7 +73,7 @@
         #set($gifimg = $!gifimglist[$idx])
         #set($paddingValue=$!{page.imgs.get($idx).imgheight}*1.0/$!{page.imgs.get($idx).imgwidth}*100)
         <figure class="section img">
-            <a class="img-wrap" style="padding-bottom: $paddingValue%;" href="$!{img}" data-size="$!{page.imgs.get($idx).imgwidth} x $!{page.imgs.get($idx).imgheight}"><img width="100%" alt="" src="$!{img}" data-weight="588" data-width="$!{page.imgs.get($idx).imgwidth}" data-height="$!{page.imgs.get($idx).imgheight}" gif-minisrc="$!{page.converthttps($gifimg)}"></a>
+            <a class="img-wrap" style="padding-bottom: $paddingValue%;" href="$!{img}" data-size="$!{page.imgs.get($idx).imgwidth} x $!{page.imgs.get($idx).imgheight}"><img width="100%" alt="" src="$!{img}" data-weight="588" data-width="$!{page.imgs.get($idx).imgwidth}" data-height="$!{page.imgs.get($idx).imgheight}" gif-minisrc="$!{gifimg}"></a>
         </figure>
         #set($idx=$idx+1)
         #else
@@ -82,7 +83,7 @@
     </div>
     <p class="article-tag clearfix">
         #foreach($param in ${tagMap.entrySet()})
-        <a href="http://msports.eastday.com/query-tag.html?typecode=${param.key}&name=${param.value}">${param.value} </a>
+        <a href="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/html/query-tag.html?typecode=${param.key}&name=${param.value}">${param.value} </a>
         #end
     </p>
 </article>
@@ -142,7 +143,7 @@
 <div style="display: none">
     <a href="http://msports.eastday.com/sitemap.xml"></a>
 </div>
-<script src="http://172.18.3.236:8080/static/dll/dll.js"></script>
+<script src="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/dll/dll.js"></script>
 
-<script type="text/javascript" src="http://172.18.3.236:8080/static/commons/webpack-runtime.85c8dc50ecd679ab127d.js"></script><script type="text/javascript" src="http://172.18.3.236:8080/static/commons/commons.149c95cb418fce6a539a.js"></script><script type="text/javascript" src="http://172.18.3.236:8080/static/detail-baijiahao/entry.8870dd997d7729452827.js"></script></body>
+<script type="text/javascript" src="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/commons/webpack-runtime.968a0474a560c2ff9a3e.js"></script><script type="text/javascript" src="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/commons/commons.f9f2b9784b04edf3491d.js"></script><script type="text/javascript" src="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/detail-baijiahao/entry.8870dd997d7729452827.js"></script></body>
 </html>

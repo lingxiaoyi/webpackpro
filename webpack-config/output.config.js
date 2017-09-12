@@ -1,10 +1,13 @@
 const dirVars = require('./base/dir-vars.config.js')
-const prod = process.argv.indexOf('--env=pro') !== -1 //判断参数如果有这个就是生产环境 API_ROOT值就为cdn地址
+const isOnlinepro = process.argv.indexOf('--env=onlinepro') !== -1 //判断参数如果有这个就是生产环境 API_ROOT值就为cdn地址
+const isTestpro = process.argv.indexOf('--env=testpro') !== -1
 let rootPath = ''
-if (prod) {
+if (isOnlinepro) {
     rootPath = 'http://msports.eastday.com/h5/'
+} else if (isTestpro) {
+    rootPath = 'http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/'
 } else {
-    rootPath = 'http://172.18.3.236:8080/'
+    rootPath = '/'
 }
 module.exports = {
     path: dirVars.buildDir,

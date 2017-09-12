@@ -26,7 +26,7 @@
         #set($gifimg = $!gifimglist[$idx])
         #set($paddingValue=$!{page.imgs.get($idx).imgheight}*1.0/$!{page.imgs.get($idx).imgwidth}*100)
         <figure class="section img">
-            <a class="img-wrap" style="padding-bottom: $paddingValue%;" href="$!{img}" data-size="$!{page.imgs.get($idx).imgwidth} x $!{page.imgs.get($idx).imgheight}"><img width="100%" alt="" src="$!{img}" data-weight="588" data-width="$!{page.imgs.get($idx).imgwidth}" data-height="$!{page.imgs.get($idx).imgheight}" gif-minisrc="$!{page.converthttps($gifimg)}"></a>
+            <a class="img-wrap" style="padding-bottom: $paddingValue%;" href="<%= isOnlinepro?'$!{page.converthttps($img)}':'$!{img}' %>" data-size="$!{page.imgs.get($idx).imgwidth} x $!{page.imgs.get($idx).imgheight}"><img width="100%" alt="" src="<%= isOnlinepro?'$!{page.converthttps($img)}':'$!{img}' %>" data-weight="588" data-width="$!{page.imgs.get($idx).imgwidth}" data-height="$!{page.imgs.get($idx).imgheight}" gif-minisrc="<%= isOnlinepro?'$!{page.converthttps($gifimg)}':'$!{gifimg}' %>"></a>
         </figure>
         #set($idx=$idx+1)
         #else

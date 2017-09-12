@@ -1,10 +1,10 @@
 {
   "name": "webpack-seed",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "This is a seed for web application built by webpack",
   "scripts": {
-    "build": "./node_modules/.bin/webpack --env=pro --progress --colors --bail",
-    "buildtest": "./node_modules/.bin/webpack  --progress --colors --bail",
+    "build": "./node_modules/.bin/webpack --env=onlinepro --progress --colors --bail",
+    "buildtest": "./node_modules/.bin/webpack --env=testpro --progress --colors --bail",
     "dev": "./node_modules/.bin/webpack  --progress --colors --config ./webpack.dev.config.js",
     "start": "./node_modules/.bin/webpack-dev-server --config ./webpack.dev.config.js --open --hot",
     "soucemap": "./node_modules/.bin/webpack-dev-server --config ./webpack.dev.soucemap.config.js --open --hot",
@@ -15,9 +15,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Array-Huang/webpack-seed.git"
+    "url": ""
   },
-  "author": "Array Huang",
+  "author": "zhijun",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.4.0",
@@ -48,6 +48,7 @@
     "glob": "^7.1.2",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.30.1",
+    "inline-manifest-webpack-plugin": "^3.0.1",
     "node-sass": "^4.5.3",
     "null-loader": "^0.1.1",
     "postcss-loader": "^1.2.2",

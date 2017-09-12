@@ -10,14 +10,16 @@ const moduleExports = {
 /* 帮助确定ie下CORS的代理文件 */
 moduleExports.DIRS.SERVER_API_URL = moduleExports.SERVER_API_URL
 
-/* global IS_PRODUCTION:true */ // 由于ESLint会检测没有定义的变量，因此需要这一个`global`注释声明IS_PRODUCTION是一个全局变量(当然在本例中并不是)来规避warning
-if (IS_PRODUCTION) { //首页地址
+/* global isOnlinepro:true isTestpro:true*/ // 由于ESLint会检测没有定义的变量，因此需要这一个`global`注释声明IS_PRODUCTION是一个全局变量(当然在本例中并不是)来规避warning
+if (isOnlinepro) { //首页地址
     moduleExports.HOME_URL = 'http://msports.eastday.com/'
+} else if (isTestpro) {
+    moduleExports.HOME_URL = 'http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/html/'
 } else {
-    moduleExports.HOME_URL = 'http://172.18.3.236:8080/'
+    moduleExports.HOME_URL = '/'
 }
 
-if (IS_PRODUCTION) { // 本项目所用的所有接口
+if (isOnlinepro) { // 本项目所用的所有接口
     moduleExports.API_URL = {
         HOST: 'http://dfsports_h5.dftoutiao.com/dfsports_h5/',
         HOST_LIVE: 'http://dfsportslive.dftoutiao.com/dfsports/',

@@ -5,7 +5,8 @@ let path = require('path')
 let dirlets = require('../base/dir-vars.config.js')
 let pageArr = require('../base/page-entries.config.js')
 let HashOutput = require('webpack-plugin-hash-output')
-const prod = process.argv.indexOf('--env=pro') !== -1
+let InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin')
+const isOnlinepro = process.argv.indexOf('--env=onlinepro') !== -1
 
 const devServer = process.argv.join('').indexOf('webpack-dev-server') !== -1 //有这个参数就生成html模板
 let configPlugins = [
@@ -28,7 +29,10 @@ let configPlugins = [
     /* 抽取出webpack的runtime代码()，避免稍微修改一下入口文件就会改动commonChunk，导致原本有效的浏览器缓存失效 */
     new webpack.optimize.CommonsChunkPlugin({
         name: 'webpack-runtime',
-        filename: 'static/commons/webpack-runtime.[hash].js'
+        filename: 'static/commons/webpack-runtime.[chunkhash].js'
+    }),
+    new InlineManifestWebpackPlugin({
+        name: 'webpackManifest'
     }),
     /* 抽取出chunk的css */
     new ExtractTextPlugin('static/[name]/styles.[contenthash].css'),
@@ -46,7 +50,7 @@ let configPlugins = [
 pageArr.forEach((page) => {
     let filename = ''
     if (!devServer && (page === 'detail' || page === 'detail-baijiahao' || page === 'liveing' || page === 'report' || page === 'video')) {
-        if (prod) {
+        if (isOnlinepro) {
             filename += `../vm/online/${page}.vm`
         } else {
             filename += `../vm/test/${page}.vm`

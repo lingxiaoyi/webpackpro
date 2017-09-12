@@ -34,7 +34,7 @@
     <div class="zhibo-main zhibo-data-content">
         <% if (IS_PRODUCTION) { %>
         <ul class="zhibo-main-ul">
-            <li class="first"><a href="javascript:;" class="tit">$!{page.title}</a>
+            <li class="first"><h3 href="javascript:;" class="tit">$!{page.title}</h3>
                 <span class="time">$!{time}</span>
             </li>
         </ul>
@@ -44,7 +44,7 @@
             #if($zw == "" || $zw == "null")
             #elseif($zw.contains("$#imgidx"))
             #set($img=$!{page.imgs.get($idx).src})
-            <img src="$!{img}" alt=""/>
+            <img src="<%= isOnlinepro?'$!{page.converthttps($img)}':'$!{img}' %>" alt=""/>
             #set($idx=$idx+1)
             #else
             <p>$zw</p>
@@ -53,7 +53,7 @@
         </div>
         <% }else { %>
         <ul class="zhibo-main-ul">
-            <li class="first"><a href="javascript:;" class="tit">世预赛-武磊破门 十人国足2-1逆转卡塔尔仍遗憾出局</a>
+            <li class="first"><h3 href="javascript:;" class="tit">世预赛-武磊破门 十人国足2-1逆转卡塔尔仍遗憾出局</h3>
                 <span class="time">09-06 00:52</span>
             </li>
         </ul>

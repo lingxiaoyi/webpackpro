@@ -3,15 +3,16 @@ let pluginsConfig = require('./inherit/plugins.config.js')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 let dirlets = require('./base/dir-vars.config.js')
 let ROOT_PATH = dirlets.staticRootDir
-
-//清理build文件夹
-pluginsConfig.unshift(new CleanWebpackPlugin(['dist', 'build'],
+const isOnlinepro = process.argv.indexOf('--env=onlinepro') !== -1
+const isTestpro = process.argv.indexOf('--env=testpro') !== -1
+//清理build文件夹  东西太多了 再来清理 方便测试
+/*pluginsConfig.unshift(new CleanWebpackPlugin(['dist', 'build'],
     {
         root: ROOT_PATH, //根目录
         verbose: true, //开启在控制台输出信息
         dry: false //启用删除文件
     })
-)
+)*/
 
 /* webpack1下，用了压缩插件会导致所有loader添加min配置，而autoprefixser也被定格到某个browers配置 */
 pluginsConfig.push(new webpack.optimize.UglifyJsPlugin({
@@ -22,7 +23,9 @@ pluginsConfig.push(new webpack.optimize.UglifyJsPlugin({
 
 pluginsConfig.push(new webpack.DefinePlugin({
     IS_PRODUCTION: true,
-    'process.env.NODE_ENV': JSON.stringify('production')
+    'process.env.NODE_ENV': JSON.stringify('production'),
+    isOnlinepro,
+    isTestpro
 }))
 
 pluginsConfig.push(new webpack.NoEmitOnErrorsPlugin()) // 配合CLI的--bail，一出error就终止webpack的编译进程

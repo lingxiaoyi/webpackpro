@@ -55,6 +55,9 @@ $(() => {
     $insideNav.on('click', 'ul li a', function(e) {
         e.preventDefault()
         saishiid = $(this).attr('data-saishiid')
+        if ($(this).hasClass('active')) {
+            return
+        }
         $insideNav.find('ul li a').removeClass('active')
         $(this).addClass('active')
         formatDateText(oldStarts)
