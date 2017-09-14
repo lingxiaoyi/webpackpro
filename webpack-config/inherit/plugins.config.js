@@ -5,7 +5,7 @@ let path = require('path')
 let dirlets = require('../base/dir-vars.config.js')
 let pageArr = require('../base/page-entries.config.js')
 let HashOutput = require('webpack-plugin-hash-output')
-//let InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin')
+const InlineChunkWebpackPlugin = require('html-webpack-inline-chunk-plugin');
 const isOnlinepro = process.argv.indexOf('--env=onlinepro') !== -1
 
 const devServer = process.argv.join('').indexOf('webpack-dev-server') !== -1 //有这个参数就生成html模板
@@ -27,7 +27,7 @@ let configPlugins = [
         minChunks: 4
     }),
     /* 抽取出webpack的runtime代码()，避免稍微修改一下入口文件就会改动commonChunk，导致原本有效的浏览器缓存失效  注意点2:devServer环境不支持chunkhash命名  chunkhash配置如果文件没有修改runtime文件也会没有变化  hash配置每次执行命令后,不管文件修不修改,每次都会修改*/
-    (function() {
+    /*(function() {
         if (devServer) {
             return new webpack.optimize.CommonsChunkPlugin({
                 name: 'manifest',
@@ -39,14 +39,14 @@ let configPlugins = [
                 filename: 'static/commons/manifest.[chunkhash].js'
             })
         }
-    })(),
-   /* new webpack.optimize.CommonsChunkPlugin({
-        name: 'webpack-runtime',
-        filename: 'static/commons/webpack-runtime.[hash].js'
-    }),*/
-    /*new InlineManifestWebpackPlugin({
-        name: 'webpackManifest'
-    }),*/
+    })(),*/
+    new webpack.optimize.CommonsChunkPlugin({
+        name: 'manifest',
+        filename: 'static/commons/manifest.[hash].js'
+    }),
+    new InlineChunkWebpackPlugin({
+        inlineChunks: ['manifest']
+    }),
     /* 抽取出chunk的css */
     new ExtractTextPlugin('static/css/[name].[contenthash].css'),
     /* 配置好Dll */
