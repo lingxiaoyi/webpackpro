@@ -41,8 +41,9 @@
           s.parentNode.insertBefore(hm, s);
       })();
   </script>
-<link href="http://msports.eastday.com/h5/static/detail/styles.83a3848bcd7055653d2988e9f0eb5175.css" rel="stylesheet"></head>
+<link href="http://msports.eastday.com/h5/static/css/detail.83a3848bcd7055653d2988e9f0eb5175.css" rel="stylesheet"></head>
 <body id="indexNew">
+
 
 <div class="crumbs">
     <a class="active" href="http://msports.eastday.com/">首页</a>
@@ -127,5 +128,5 @@
 </div>
 <script src="http://msports.eastday.com/h5/static/dll/dll.js"></script>
 
-<script type="text/javascript" src="http://msports.eastday.com/h5/static/commons/webpack-runtime.42822bb3deb377d6350a.js"></script><script type="text/javascript" src="http://msports.eastday.com/h5/static/commons/commons.263bd00c2842fd59d70a.js"></script><script type="text/javascript" src="http://msports.eastday.com/h5/static/detail/entry.04c40149c356a9f38c7b.js"></script></body>
+<script type="text/javascript" src="http://msports.eastday.com/h5/static/commons/webpack-runtime.bb49e5f89f794f473d10.js"></script><script type="text/javascript" src="http://msports.eastday.com/h5/static/commons/commons.6628f879e4a77c3eb172.js"></script><script type="text/javascript" src="http://msports.eastday.com/h5/static/js/detail.0955cc21f94d7f380fb4.js"></script></body>
 </html>

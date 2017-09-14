@@ -12,7 +12,7 @@ module.exports = {
 
     externals: require('./webpack-config/externals.config.js'),
 
-    devtool: 'inline-source-map',
+    devtool: 'cheap-module-eval-source-map', //inline-source-map
 
     devServer: require('./webpack-config/vendor/devServer.config.js')
 }

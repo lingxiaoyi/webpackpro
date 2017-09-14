@@ -41,7 +41,7 @@
           s.parentNode.insertBefore(hm, s);
       })();
   </script>
-<link href="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/detail/styles.83a3848bcd7055653d2988e9f0eb5175.css" rel="stylesheet"></head>
+<link href="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/css/detail.83a3848bcd7055653d2988e9f0eb5175.css" rel="stylesheet"></head>
 <body id="indexNew">
 
 
@@ -128,5 +128,5 @@
 </div>
 <script src="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/dll/dll.js"></script>
 
-<script type="text/javascript" src="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/commons/webpack-runtime.968a0474a560c2ff9a3e.js"></script><script type="text/javascript" src="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/commons/commons.f9f2b9784b04edf3491d.js"></script><script type="text/javascript" src="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/detail/entry.04c40149c356a9f38c7b.js"></script></body>
+<script type="text/javascript" src="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/commons/commons.f9f2b9784b04edf3491d.js"></script><script type="text/javascript" src="http://gxjifen.dftoutiao.com/gx-ued-jser/wangzhijun/msports.resources/msports.east.webpack/build/static/js/detail.04c40149c356a9f38c7b.js"></script></body>
 </html>

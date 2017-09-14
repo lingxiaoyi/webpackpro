@@ -890,6 +890,7 @@ $(() => {
             _util_.makeJsonp(HOST + 'teamRelateNews', data).done(function(result) {
                 J_loading.hide()
                 $el.find('ul').html(produceListHtml(result))
+                $el.append(`<div class="no-more" style="margin:0 0 0 -0.24rem;width:7.5rem;">没有更多了~</div>`)
             })
 
             function produceListHtml(result) {
