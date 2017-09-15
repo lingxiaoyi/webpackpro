@@ -42,7 +42,7 @@ let configPlugins = [
     })(),*/
     new webpack.optimize.CommonsChunkPlugin({
         name: 'manifest',
-        filename: 'static/commons/manifest.[hash].js'
+        filename: '../webpack_manifest/manifest.[hash].js' //生成mainfest文件到build文件外  因为会将内容输出插入html script标签中,不需要额外引入或放到cdn里,,production环境可以用chuckhash,不过直接用hash省事,不用上边的复杂配置了
     }),
     new InlineChunkWebpackPlugin({
         inlineChunks: ['manifest']

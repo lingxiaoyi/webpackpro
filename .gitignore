@@ -11,6 +11,7 @@ node_modules
 build
 dist
 vm
+webpack_manifest
 .idea
 .svn
 *.svn

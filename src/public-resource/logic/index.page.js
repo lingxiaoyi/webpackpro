@@ -34,11 +34,11 @@ $(() => {
     let wsCache = new WebStorageCache()
     $body.append(`<div class="popup" id="popup"></div>`)//加入弹窗
     let $popup = $('#popup')
-    //定义需要传入接口的值
+    // 定义需要传入接口的值
     const _os_ = _util_.getOsType()
     const _recgid_ = _util_.getUid()
     let _qid_ = _util_.getPageQid()
-    const _domain_ = 'dfsports_h5'
+    const _domain_ = 'dfsports_h5111'
     const _pixel_ = window.screen.width + '*' + window.screen.height
     _qid_ = _AD_['indexGg'][_qid_] ? _qid_ : 'null' //将qid过滤 如果广告中没有定义的就为null
     class EastSport {
