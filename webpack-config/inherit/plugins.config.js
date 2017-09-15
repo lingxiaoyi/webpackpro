@@ -5,7 +5,7 @@ let path = require('path')
 let dirlets = require('../base/dir-vars.config.js')
 let pageArr = require('../base/page-entries.config.js')
 let HashOutput = require('webpack-plugin-hash-output')
-const InlineChunkWebpackPlugin = require('html-webpack-inline-chunk-plugin');
+const InlineChunkWebpackPlugin = require('html-webpack-inline-chunk-plugin')
 const isOnlinepro = process.argv.indexOf('--env=onlinepro') !== -1
 
 const devServer = process.argv.join('').indexOf('webpack-dev-server') !== -1 //有这个参数就生成html模板
