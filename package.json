@@ -69,7 +69,6 @@
     "n-zepto": "^1.2.0",
     "swiper": "^3.4.2",
     "web-storage-cache": "^1.0.3",
-    "weixin-js-sdk": "^1.2.0",
-    "zepto": "^1.2.0"
+    "weixin-js-sdk": "^1.2.0"
   }
 }
